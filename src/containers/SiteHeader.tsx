@@ -8,8 +8,8 @@ const render = (data) => {
   const meta: any = _path(['site', 'siteMetadata'], data);
   return (
     <Header
-      title={_prop('title')(meta)}
-      navItems={_prop('primaryMenuLinks')(meta)}
+      title={_prop('title', meta)}
+      navItems={_prop('primaryMenuLinks', meta)}
     />
   );
 };

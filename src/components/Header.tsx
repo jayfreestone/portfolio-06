@@ -7,6 +7,7 @@ const Header: React.SFC<HeaderProps> = ({
   navItems,
 }) => (
   <header className="site-header">
+    {console.log(title, navItems)}
     <div className="site-header__inner">
       <H className="site-header__title">
         <Link
@@ -16,21 +17,23 @@ const Header: React.SFC<HeaderProps> = ({
           {title}
         </Link>
       </H>
-      <nav className="site-header__nav">
-        <ul>
-          {navItems.map(({ link, label }) => (
-            <li key={link}>
-              <Link
-                to={link}
-                className="site-header__link"
-                activeClassName="site-header__link--is-active"
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {navItems && (
+        <nav className="site-header__nav">
+          <ul>
+            {navItems.map(({ link, label }) => (
+              <li key={link}>
+                <Link
+                  to={link}
+                  className="site-header__link"
+                  activeClassName="site-header__link--is-active"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
       <span className="site-header__contact">
         <a
           href="mailto:mail@jayfreestone.com"

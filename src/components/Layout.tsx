@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import SiteHeader from './../containers/SiteHeader';
+import Footer from './../components/Footer';
 import Section from './Section';
 import './../styles/main.scss';
 
@@ -33,6 +34,7 @@ const Layout = ({ children }) => (
           >
             {children}
           </div>
+          <Footer />
         </Section>
       </>
     )}
