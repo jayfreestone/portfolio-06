@@ -13,16 +13,21 @@ const IndexPage: React.SFC<IndexPageProps> = ({ data }) => {
   return (
     <Layout>
       <section>
-        <Img fluid={Object.assign({}, headerImage.fluid, {
-          sizes: '90vw',
-        })} />
         <Section>
-          {meta.title && (
-            <H
-              className="h1"
-              dangerouslySetInnerHTML={createMarkup(meta.title)}
+          <div className="banner">
+            <Img
+              className="banner__image"
+              fluid={Object.assign({}, headerImage.fluid, {
+                sizes: '90vw',
+              })}
             />
-          )}
+            {meta.title && (
+              <H
+                className="banner__title h1"
+                dangerouslySetInnerHTML={createMarkup(meta.title)}
+              />
+            )}
+          </div>
           {html && (
             <div
               className="prose"

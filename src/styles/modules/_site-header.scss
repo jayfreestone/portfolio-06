@@ -2,6 +2,7 @@
   --sh-link-spacing: var(--s-2);
   margin-left: calc(var(--sh-link-spacing) * -1);
   margin-right: calc(var(--sh-link-spacing) * -1);
+  padding: var(--s-h-pad) 0;
 
   @media (min-width: 40em) {
     --sh-link-spacing: var(--s-3);
@@ -17,14 +18,12 @@
 
 .site-header__title {
   font-size: 1em;
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
   white-space: nowrap;
-  //margin-right: var(--s-2);
-  //margin-right: auto;
 
   > .site-header__link {
-    text-decoration: none;
+    color: var(--t-accent);
   }
 }
 
@@ -46,11 +45,11 @@
 .site-header__link {
   padding: var(--sh-link-spacing);
   color: var(--t-color);
+  text-decoration: none;
 }
 
 .site-header__link--is-active {
   color: var(--t-whisper);
-  text-decoration: none;
 }
 
 .site-header__contact {

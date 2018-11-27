@@ -53,11 +53,12 @@ body {
   --t-background: var(--t-black);
   --t-color: var(--t-white);
   --line-height: 1.5;
+  --max-content-width: 60em;
   color: var(--t-color);
   font-family: var(--primary-font);
   background-color: var(--t-background);
   line-height: var(--line-height);
-  padding: var(--s-h-pad);
+  padding: 0 var(--s-h-pad);
 
   @media (min-width: 40em) {
     --line-height: 1.625;
