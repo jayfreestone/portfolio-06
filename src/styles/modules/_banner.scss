@@ -2,6 +2,7 @@
   display: grid;
   align-items: end;
   grid-template-rows: 1fr;
+  margin-top: calc(var(--s-header-height) * -1);
   //grid-gap: var(--s-h-pad);
   //--max-col-width: calc(var(--max-content-width) / 12);
   //grid-template-columns: 1fr var(--s-h-pad) repeat(12, minmax(1rem, var(--max-col-width))) var(--s-h-pad) 1fr;
@@ -27,9 +28,8 @@
 .banner__title {
   grid-column: 1;
   grid-row: 1;
-  max-width: 18ch;
-  //grid-column: 2 / span 1;
-  //margin-top: -100%;
+  max-width: 13ch;
+  padding-top: var(--s-header-height);
 }
 
 .banner__t-accent {

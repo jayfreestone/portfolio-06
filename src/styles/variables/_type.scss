@@ -2,5 +2,12 @@
   --primary-font: 'graphik';
   --fs-sm: 0.875em;
   --fs-xl: 1.6em;
-  //--fs-xl: 2em;
+
+  @media (min-width: 30em) {
+    --fs-xl: 2.25em;
+  }
+
+  @media (min-width: 50em) {
+    --fs-xl: 3em;
+  }
 }

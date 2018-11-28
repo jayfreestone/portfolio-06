@@ -2,7 +2,6 @@
   --sh-link-spacing: var(--s-2);
   margin-left: calc(var(--sh-link-spacing) * -1);
   margin-right: calc(var(--sh-link-spacing) * -1);
-  padding: var(--s-h-pad) 0;
 
   @media (min-width: 40em) {
     --sh-link-spacing: var(--s-3);
@@ -14,6 +13,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  height: var(--s-header-height);
 }
 
 .site-header__title {
