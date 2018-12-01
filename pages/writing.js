@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import api from '../utils/api';
+import BaseLayout from '../components/layouts/BaseLayout';
 
 class Writing extends React.Component {
   static async getInitialProps({ req }) {
@@ -10,10 +11,10 @@ class Writing extends React.Component {
 
   render() {
     return (
-      <div>
+      <BaseLayout>
         {this.props.posts.map(post => (
           <Link
-            // as={post.route}
+            as={post.route}
             href={post.route}
             key={post.route}
           >
@@ -22,7 +23,7 @@ class Writing extends React.Component {
             </a>
           </Link>
         ))}
-      </div>
+      </BaseLayout>
     );
   }
 }
