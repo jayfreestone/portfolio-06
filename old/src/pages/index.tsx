@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Section from '../components/Section';
-import H from '../components/H';
+import Section from '../../../components/Section';
+import H from '../../../components/H';
 import createMarkup from '../utilities/createMarkup';
 import Img from 'gatsby-image';
 

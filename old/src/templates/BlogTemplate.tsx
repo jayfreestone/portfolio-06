@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Section from '../components/Section';
-import H from '../components/H';
+import Section from '../../../components/Section';
+import H from '../../../components/H';
 import Layout from '../components/Layout';
 import createMarkup from '../utilities/createMarkup';
 

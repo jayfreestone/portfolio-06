@@ -1,8 +1,11 @@
+import getConfig from 'next/config'
 import fetch from 'isomorphic-unfetch';
+
+const { publicRuntimeConfig } = getConfig();
 
 function get(endpoint) {
   return function() {
-    return fetch(`${process.env.API_URL}/api/${endpoint}`)
+    return fetch(`${publicRuntimeConfig.API_URL}/${endpoint}`)
       .then(resp => resp.json());
   }
 }

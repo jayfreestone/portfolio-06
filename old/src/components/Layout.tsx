@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import SiteHeader from './../containers/SiteHeader';
 import Footer from './../components/Footer';
-import Section from './Section';
+import Section from '../../../components/Section';
 import './../styles/main.scss';
 
 const Layout = ({ children }) => (

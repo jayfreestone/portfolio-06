@@ -1,0 +1,73 @@
+// Mass reset
+html,
+body,
+section,
+nav,
+article,
+aside,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+header,
+footer,
+address,
+p,
+hr,
+pre,
+blockquote,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+figure,
+figcaption,
+div,
+table,
+caption,
+form,
+fieldset {
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+body {
+  --t-link-color: var(--t-accent);
+  --t-background: var(--t-black);
+  --t-color: var(--t-white);
+  --line-height: 1.5;
+  color: var(--t-color);
+  font-family: var(--primary-font);
+  background-color: var(--t-background);
+  line-height: var(--line-height);
+  padding: var(--s-h-pad);
+
+  @media (min-width: 40em) {
+    --line-height: 1.625;
+  }
+}
+
+a {
+  color: var(--t-link-color);
+}
+
+blockquote {
+  //font-style: italic;
+}

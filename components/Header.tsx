@@ -1,19 +1,17 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import H from '../../../components/H';
+import Link from 'next/link';
+import H from './H';
 
-const Header: React.SFC<HeaderProps> = ({
-  title,
-  navItems,
-}) => (
+const Header: React.FunctionComponent<HeaderProps> = ({ title, navItems }) => (
   <header className="site-header">
     <div className="site-header__inner">
       <H className="site-header__title">
         <Link
-          to="/"
-          className="site-header__link"
+          href="/"
         >
-          {title}
+          <a className="site-header__link">
+            {title}
+          </a>
         </Link>
       </H>
       {navItems && (
@@ -22,11 +20,11 @@ const Header: React.SFC<HeaderProps> = ({
             {navItems.map(({ link, label }) => (
               <li key={link}>
                 <Link
-                  to={link}
-                  className="site-header__link"
-                  activeClassName="site-header__link--is-active"
+                  href={link}
                 >
-                  {label}
+                  <a className="site-header__link">
+                    {label}
+                  </a>
                 </Link>
               </li>
             ))}
