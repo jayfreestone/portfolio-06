@@ -29,12 +29,17 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Section>
-          <SiteHeader />
-          <div
-          >
-            {children}
+          <div className="site">
+            <div className="site__header">
+              <SiteHeader />
+            </div>
+            <div className="site__body">
+              {children}
+            </div>
+            <div className="site__footer">
+              <Footer />
+            </div>
           </div>
-          <Footer />
         </Section>
       </>
     )}

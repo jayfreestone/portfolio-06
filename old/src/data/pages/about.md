@@ -1,6 +1,6 @@
 ---
 path: "/"
-title: "I’m Jay, a frontend developer living and working in East&nbsp;London."
+title: "A <span class=\"banner__t-accent\">frontend developer</span> living and working in <span class=\"banner__t-accent\">East&nbsp;London</span>."
 experience: 
   - company: Browser London
     role: Lead Frontend Developer
