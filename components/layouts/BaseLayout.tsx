@@ -10,8 +10,16 @@ const BaseLayout: React.FunctionComponent = ({ children }) => (
         title="Jay Freestone"
         navItems={[
           {
+            link: '/#work',
+            label: 'Work',
+          },
+          {
             link: '/writing',
             label: 'Writing',
+          },
+          {
+            link: '/#contact',
+            label: 'Contact',
           },
         ]}
       />

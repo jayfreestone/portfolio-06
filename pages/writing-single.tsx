@@ -1,4 +1,4 @@
-import { withRouter } from 'next/router'
+import { withRouter } from 'next/router';
 
 const Page = withRouter((props) => (
   <div>
@@ -7,4 +7,4 @@ const Page = withRouter((props) => (
   </div>
 ));
 
-export default Page
+export default Page;

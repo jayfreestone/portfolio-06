@@ -1,17 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import api from '../utils/api';
-import BaseLayout from '../components/layouts/BaseLayout';
 
-class Writing extends React.Component {
-  static async getInitialProps({ req }) {
-    const posts = await api.getPosts(req);
+class Writing extends React.Component<WritingProps> {
+  static async getInitialProps() {
+    const posts = await api.getPosts();
     return { posts };
   }
 
   render() {
     return (
-      <BaseLayout>
+      <div>
         {this.props.posts.map(post => (
           <Link
             as={post.route}
@@ -23,10 +22,20 @@ class Writing extends React.Component {
             </a>
           </Link>
         ))}
-      </BaseLayout>
+      </div>
     );
   }
 }
 
-export default Writing;
+interface WritingProps {
+  posts: {
+    route: string;
+    meta: {
+      path: string;
+      title: string;
+      date: string;
+    };
+  }[];
+}
 
+export default Writing;

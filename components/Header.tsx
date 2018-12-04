@@ -14,6 +14,14 @@ const Header: React.FunctionComponent<HeaderProps> = ({ title, navItems }) => (
           </a>
         </Link>
       </H>
+      <span className="site-header__contact">
+        <a
+          href="mailto:mail@jayfreestone.com"
+          className="site-header__link"
+        >
+          mail@jayfreestone.com
+        </a>
+      </span>
       {navItems && (
         <nav className="site-header__nav">
           <ul>
@@ -31,14 +39,6 @@ const Header: React.FunctionComponent<HeaderProps> = ({ title, navItems }) => (
           </ul>
         </nav>
       )}
-      <span className="site-header__contact">
-        <a
-          href="mailto:mail@jayfreestone.com"
-          className="site-header__link"
-        >
-          mail@jayfreestone.com
-        </a>
-      </span>
     </div>
   </header>
 );
