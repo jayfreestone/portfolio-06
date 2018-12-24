@@ -29,7 +29,7 @@
     "remark-stringify": "^6.0.4",
     "to-vfile": "^5.0.2",
     "typescript": "^3.2.1",
-    "unified": "^7.0.2",
+    "unified": "^7.1.0",
     "unified-stream": "^1.0.4"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "export": "next export"
+    "export": "npm run build && next export"
   },
   "repository": {
     "type": "git",

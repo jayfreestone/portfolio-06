@@ -12,4 +12,5 @@ function get(endpoint) {
 
 export default {
   getPosts: get('writing'),
+  getPost: slug => get(`writing/${slug}`)(),
 };

@@ -25,6 +25,7 @@ function withPathMap(config) {
 
       return Object.assign({}, postRoutes, {
         '/': { page: '/' },
+        '/writing': { page: '/writing' },
       });
     }
   });

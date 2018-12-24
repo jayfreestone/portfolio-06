@@ -1,10 +1,38 @@
-import { withRouter } from 'next/router';
+import React from 'react';
+import Link from 'next/link';
+import api from '../utils/api';
+import H from '../components/H';
+import Section from '../components/Section';
+import Html from '../components/Html';
 
-const Page = withRouter((props) => (
-  <div>
-    <h1>{props.router.query.slug}</h1>
-    <p>This is the blog post content.</p>
-  </div>
-));
+class WritingSingle extends React.Component<WritingSingleProps> {
+  static async getInitialProps({ query }) {
+    const slug = query.slug;
+    const post = await api.getPost(slug);
+    return { post };
+  }
 
-export default Page;
+  render() {
+    const { meta, content } = this.props.post;
+    return (
+      <Section>
+        <H>{meta.title}</H>
+        <Html html={content} />
+      </Section>
+    );
+  }
+}
+
+interface WritingSingleProps {
+  post: {
+    route: string;
+    content: string;
+    meta: {
+      path: string;
+      title: string;
+      date: string;
+    };
+  };
+}
+
+export default WritingSingle;

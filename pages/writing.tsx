@@ -11,17 +11,23 @@ class Writing extends React.Component<WritingProps> {
   render() {
     return (
       <div>
-        {this.props.posts.map(post => (
-          <Link
-            as={post.route}
-            href={post.route}
-            key={post.route}
-          >
-            <a>
-              {post.meta.title}
-            </a>
-          </Link>
-        ))}
+        <ul>
+          {this.props.posts.map(post => (
+            <li key={post.route}>
+              <Link
+                as={post.route}
+                href={{
+                  pathname: post.page,
+                  query: post.query,
+                }}
+              >
+                <a>
+                  {post.meta.title}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
@@ -29,11 +35,15 @@ class Writing extends React.Component<WritingProps> {
 
 interface WritingProps {
   posts: {
+    page: string;
     route: string;
     meta: {
       path: string;
       title: string;
       date: string;
+    };
+    query: {
+      slug: string;
     };
   }[];
 }
