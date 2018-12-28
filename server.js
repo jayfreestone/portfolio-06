@@ -9,21 +9,21 @@ app.prepare()
   .then(() => {
     const server = express();
 
-    server.use('/api', require('./server/api'));
+    // server.use('/api', require('./server/api'));
 
-    server.get('/writing/:slug', (req, res) => {
-      const actualPage = '/writing-single';
-      const queryParams = { slug: req.params.slug };
-      app.render(req, res, actualPage, queryParams);
-    });
+    // server.get('/writing/:slug', (req, res) => {
+    //   const actualPage = '/writing-single';
+    //   const queryParams = { slug: req.params.slug };
+    //   app.render(req, res, actualPage, queryParams);
+    // });
 
     server.get('*', (req, res) => {
       return handle(req, res)
     });
 
     server.listen(3000, (err) => {
-      if (err) throw err
-      console.log('> Ready on http://localhost:3000')
+      if (err) throw err;
+      console.log('> Ready on http://localhost:3000');
     });
   })
   .catch((ex) => {

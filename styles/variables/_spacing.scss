@@ -6,4 +6,8 @@
   --s-4: 2em;
   --s-5: 4em;
   --s-6: 8em;
+
+  @media (min-width: 40em) {
+    --s-h-pad: 5vw;
+  }
 }

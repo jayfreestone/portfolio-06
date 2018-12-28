@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const Level = React.createContext(0);
+export const Level = React.createContext(1);
 
-const Section = props => (
+const Section: React.FunctionComponent = props => (
   <Level.Consumer>{level =>
     <Level.Provider value={level + 1}>
       {props.children}

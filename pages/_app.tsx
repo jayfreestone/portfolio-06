@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import App, { Container } from 'next/app';
+import MDX from '../components/wrappers/MDX';
 import BaseLayout from '../components/layouts/BaseLayout';
 
 class MyApp extends App {
@@ -19,12 +20,14 @@ class MyApp extends App {
 
     return (
       <Container>
-        <Head>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
-        <BaseLayout>
-          <Component {...pageProps} />
-        </BaseLayout>
+        <MDX>
+          <Head>
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          </Head>
+          <BaseLayout>
+            <Component {...pageProps} />
+          </BaseLayout>
+        </MDX>
       </Container>
     );
   }

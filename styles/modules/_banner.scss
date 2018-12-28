@@ -1,7 +1,7 @@
 .banner {
-  display: grid;
-  align-items: end;
-  grid-template-rows: 1fr;
+  // background-color: var(--t-background);
+  // align-items: end;
+  // grid-template-rows: 1fr;
   //grid-gap: var(--s-h-pad);
   //--max-col-width: calc(var(--max-content-width) / 12);
   //grid-template-columns: 1fr var(--s-h-pad) repeat(12, minmax(1rem, var(--max-col-width))) var(--s-h-pad) 1fr;
@@ -10,26 +10,24 @@
 }
 
 .banner__image {
-  background-color: var(--t-background);
-  z-index: -1;
-  grid-row: 1;
-  grid-column: 1;
-  margin-bottom: 0.8em;
+  width: 35%;
+  float: right;
+  shape-outside: url('/static/img/jf-bar.png'); 
+  shape-margin: var(--s-3);
+  mix-blend-mode: lighten;
+  // z-index: -1;
+  // grid-row: 1;
+  // grid-column: 1;
+  // margin-bottom: 0.8em;
   //margin-right: calc(var(--s-h-pad) * -1);
   //margin-left: calc(var(--s-h-pad) * -0.5);
 
-  img {
-    mix-blend-mode: multiply;
-  }
+  // img {
+  //   mix-blend-mode: multiply;
+  // }
 }
 
 .banner__title {
-  grid-column: 1;
-  grid-row: 1;
-  max-width: 13ch;
-  padding-top: var(--s-header-height);
-}
-
-.banner__t-accent {
-  color: var(--t-accent);
+  // font-size: 5vmax;
+  font-size: calc( 1.5rem + 18 * (100vw - 320px) / (960 - 320) );
 }

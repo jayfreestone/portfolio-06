@@ -15,7 +15,6 @@
   @include space;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
 
@@ -30,9 +29,9 @@
   font-style: normal;
   white-space: nowrap;
 
-  > .site-header__link {
-    color: var(--t-accent);
-  }
+  // > .site-header__link {
+    // color: var(--t-accent);
+  // }
 }
 
 .site-header__nav {
@@ -51,10 +50,5 @@
 }
 
 .site-header__link--is-active {
-  color: var(--t-whisper);
-}
-
-.site-header__contact {
-  margin-right: auto;
-  padding-right: var(--s-5);
+  color: var(--t-accent);
 }
