@@ -10,7 +10,13 @@ const { experience, skills, education, social } = meta;
 const Index = () => (
   <div>
     <div className="banner">
-      <img className="banner__image" src="/static/img/jf-bar.png" alt="" />
+      <div className="banner__image">
+        <img src="/static/img/jf-bar-mask.svg" alt="" />
+        <img src="/static/img/jf-bar.png" alt="" />
+      </div>
+      {/* <div className="banner__pre-title">
+        Yo
+      </div> */}
       <div className="banner__title h1">
         <Prose>
           <Bio />

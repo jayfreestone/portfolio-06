@@ -1,9 +1,14 @@
 import React from 'react';
+import Head from 'next/head';
 import Header from '../Header';
+import Footer from '../Footer';
 import '../../styles/main.scss';
 
 const BaseLayout: React.FunctionComponent = ({ children }) => (
   <div>
+    <Head>
+      <link rel="preload" as="image" href="/static/img/jf-bar-mask.svg"/>
+    </Head>
     <Header
       title="Jay Freestone"
       navItems={[
@@ -22,6 +27,7 @@ const BaseLayout: React.FunctionComponent = ({ children }) => (
       ]}
     />
     {children}
+    <Footer />
   </div>
 );
 

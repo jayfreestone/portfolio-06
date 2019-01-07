@@ -1,6 +1,8 @@
 @import '~normalize.css/normalize';
+@import '~prismjs/themes/prism-okaidia';
 
 @import 'utility/space';
+@import 'utility/clearfix';
 
 @import 'variables/colors';
 @import 'variables/spacing';
@@ -12,6 +14,7 @@
 @import 'base/headings';
 
 @import 'modules/site-header';
+@import 'modules/site-footer';
 @import 'modules/prose';
 @import 'modules/banner';
 @import 'modules/site';

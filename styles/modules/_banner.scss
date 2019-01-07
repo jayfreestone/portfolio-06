@@ -1,5 +1,10 @@
 .banner {
-  // background-color: var(--t-background);
+  overflow: hidden;
+  background-color: var(--t-background);
+
+  @media (min-width: 50em) {
+    margin-right: calc(var(--s-h-pad) * -1);
+  }
   // align-items: end;
   // grid-template-rows: 1fr;
   //grid-gap: var(--s-h-pad);
@@ -10,24 +15,61 @@
 }
 
 .banner__image {
-  width: 35%;
-  float: right;
-  shape-outside: url('/static/img/jf-bar.png'); 
-  shape-margin: var(--s-3);
-  mix-blend-mode: lighten;
-  // z-index: -1;
-  // grid-row: 1;
-  // grid-column: 1;
-  // margin-bottom: 0.8em;
-  //margin-right: calc(var(--s-h-pad) * -1);
-  //margin-left: calc(var(--s-h-pad) * -0.5);
+  position: relative;
 
-  // img {
-  //   mix-blend-mode: multiply;
+  // &:before {
+  //   content: '';
+  //   width: 1px;
+  //   float: right;
+  //   padding-bottom: 135%;
+  //   margin-left: -1px;
   // }
+  svg,
+  img {
+    mix-blend-mode: lighten;
+  }
+
+  @media (min-width: 22em) {
+    svg,
+    img {
+      width: 35%;
+      max-width: 22em;
+      float: right;
+      shape-margin: var(--s-3);
+      shape-outside: url('/static/img/jf-bar-mask.svg'); 
+    }
+  }
+
+  @media (min-width: 50em) {
+    svg,
+    img {
+      // margin-right: -6%;
+      margin-right: -4em;
+    }
+  }
+
+  img:nth-child(2) {
+    position: absolute;
+    right: 0;
+  }
 }
 
 .banner__title {
-  // font-size: 5vmax;
-  font-size: calc( 1.5rem + 18 * (100vw - 320px) / (960 - 320) );
+  padding-top: var(--s-2);
+  font-size: calc( 1.5rem + 16 * (100vw - 320px) / (960 - 320) );
+
+  p {
+    display: inline;
+
+    &:not(:first-child) {
+      color: var(--t-grey);
+      // color: #adb5bd;
+    }
+
+    &:not(:last-child) {
+      &:after {
+        content: ' ';
+      }
+    }
+  }
 }
