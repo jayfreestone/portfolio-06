@@ -1,6 +1,6 @@
 import React from 'react';
 
-function createMarkup(html: string) {
+export function createMarkup(html: string) {
   return { __html: html };
 }
 

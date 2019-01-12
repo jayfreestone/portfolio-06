@@ -5,7 +5,7 @@ import Section from '../components/Section';
 import Prose from '../components/Prose';
 import Bio, { meta } from './../data/writing/bio.mdx';
 
-const { experience, skills, education, social } = meta;
+const { experience, skills, education, social, work } = meta;
 
 const Index = () => (
   <div>
@@ -81,6 +81,33 @@ const Index = () => (
         </div>
       </Section>
     </div>
+    <Section>
+      <H>Work</H>
+      <ul>
+        {work.map(({ content, meta: projectMeta }) => (
+          <li>
+            <Section>
+              <H>{projectMeta.title}</H>
+              <time dateTime={projectMeta.date}>
+                {projectMeta.date}
+              </time>
+              <Section>
+                {content}
+              </Section>
+              {projectMeta.skills && (
+                <ul>
+                  {projectMeta.skills.map(projectSkill => (
+                    <li>
+                      {projectSkill}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </Section>
+          </li>
+        ))}
+      </ul>
+    </Section>
   </div>
 );
 

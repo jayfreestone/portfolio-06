@@ -1,3 +1,8 @@
+import WorkPortal, { meta as WorkPortalMeta } from './work/document-sharing-portal.mdx';
+import WorkSecurityPub, { meta as WorkSecurityPubMeta } from './work/security-publishing-platform.mdx';
+import WorkMUA, { meta as WorkMUAMeta } from './work/jewellery-ecommerce.mdx';
+import Metadata from './../../components/Metadata';
+
 export const meta = {
   experience: [
     {
@@ -23,7 +28,7 @@ export const meta = {
     'CSS/SASS',
     'Adobe Illustrator',
     'TDD',
-    'WordPress, sadly',
+    'WordPress',
   ],
   education: [
     {
@@ -49,8 +54,40 @@ export const meta = {
       link: 'https://github.com/jayfreestone',
     },
   },
+  work: [
+    {
+      content: <WorkSecurityPub />,
+      meta: WorkSecurityPubMeta,
+    },
+    {
+      content: <WorkPortal />,
+      meta: WorkPortalMeta,
+    },
+    {
+      content: <WorkMUA />,
+      meta: WorkMUAMeta,
+    },
+  ],
 };
 
 I’m a front-end developer living and working in East London.
 
 I currently lead the front-end team at [Browser London](https://www.browserlondon.com/) where I help build enterprise web-apps. Prior to that I managed the digital side of [Overture London’s](https://overture.london/) design projects and hosting infrastructure.
+
+<Metadata 
+  data={{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "email": meta.social.email.link,
+    "image": "/static/img/jf-bar.png",
+    "jobTitle": "Front End Developer",
+    "name": "Jay Freestone",
+    "birthDate": "1979.01.16",
+    "gender": "male",
+    "url": "https://www.jayfreestone.com.com",
+    "sameAs" : [
+      meta.social.twitter.link,
+      meta.social.github.link,
+    ]
+  }}
+/>
