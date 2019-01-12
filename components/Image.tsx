@@ -25,13 +25,13 @@ class Image extends React.Component<ImageProps, ImageState> {
   }
 
   render() {
-    const { src, className } = this.props;
+    const { src, className, width, height } = this.props;
     const { hasIntersected } = this.state;
 
     if (hasIntersected) {
       return (
         <img
-          src={`/static/img/${src}`}
+          src={src}
           className={className}
         />
       );
@@ -40,7 +40,7 @@ class Image extends React.Component<ImageProps, ImageState> {
     return (
       <Observer {...this.options}>
         <img
-          src={Image.generatePlaceholderSrc(200, 100)}
+          src={Image.generatePlaceholderSrc(width, height)}
           className={className}
         />
       </Observer>
@@ -51,6 +51,8 @@ class Image extends React.Component<ImageProps, ImageState> {
 interface ImageProps {
   src: string;
   className?: string;
+  width?: number;
+  height?: number;
 }
 
 interface ImageState {

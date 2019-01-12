@@ -1,11 +1,13 @@
----
-path: "/writing/perils-of-atomic-design"
-title: "Perils of Atomic Design"
-date: "2015-09-28"
----
+import WritingSingle from '../../components/templates/writing-single';
+
+export const meta = {
+  title: 'Perils of Atomic Design',
+  date: '2015-09-28',
+};
+
 Modular design methodologies, such as Brad Frost's [Atomic Design](http://atomicdesign.bradfrost.com), offer consistency and maintainability. But do they also foster fragmentation? 
 
-><span>To design is much more than simply to assemble, to order or even to edit: it is to add value and meaning, to illuminate, to simplify, to clarify, to modify, to dignify, to dramatize, to persuade, and perhaps even to amuse. To design is to transform prose into poetry.</span>
+>To design is much more than simply to assemble, to order or even to edit: it is to add value and meaning, to illuminate, to simplify, to clarify, to modify, to dignify, to dramatize, to persuade, and perhaps even to amuse. To design is to transform prose into poetry.
 >Paul Rand [Design, Form and Chaos](http://www.amazon.co.uk/Design-Form-Chaos-Paul-Rand/dp/0300055536)
 
 The conceit of Atomic Design, whether you subscribe to the nomenclature or not, is the construction of a system from the inside out. The smallest elements of a design (atoms) are conceived of in isolation, then joined to others continuously (molecules then templates) until the finished design emerges (pages). Such component-based architecture often conflates a ‘living’ style guide with a UI toolkit. Luke Askew summarises the differences:
@@ -39,7 +41,7 @@ Stephen Hay is often quoted as saying:
 
 The key here is the systems part. We are not designing the components themselves, we are constructing an ecosystem around them. Designing atoms and molecules in isolation makes this impossible. In any other industry this would be considered absurd, making the industrial design metaphor that is often trotted out even more perplexing:
 
->The "door assembler" will gather all these parts—parts that have been individually QA'd at their respective facilities—and turn them into a completed door. The car manufacturer then takes that QA'd, completed door and will bolt it onto the car frame… This process allows the development of these components at the same time that other components are being manufactured.
+><span>The "door assembler" will gather all these parts—parts that have been individually QA'd at their respective facilities—and turn them into a completed door. The car manufacturer then takes that QA'd, completed door and will bolt it onto the car frame… This process allows the development of these components at the same time that other components are being manufactured.</span>
 >Federico Holgado [Architecting a Pattern Library](http://us5.campaign-archive1.com/?u=7e093c5cf4&id=ead8a72012&e=ecb25a3f93)
 
 The car is not *designed* in isolation, it is *manufactured* in isolation. The one-thing-well [UNIX philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) does not apply to design systems, which, at their best, operate as a cohesive entity. This is why OS X is a breath of fresh air — it is a UNIX system with a consistent philosophy, a [cathedral, not a bazaar](http://firstmonday.org/ojs/index.php/fm/article/view/1472/1387).
@@ -58,3 +60,7 @@ Redesigning a module ‘without having to deeply understand the neighbouring mod
 It is possible to adopt a middle ground. There are great pattern-library projects out there and [fantastic work](http://styleguides.io/) being done on digital style-guides. Documentation goes a long way to establishing both a basic set of styles and the markup that accompanies them. [KSS](http://warpspire.com/kss/), which has long been the CSS documentation standard, is more than capable of spitting out a basic framework with a minimal amount of upkeep. 
 
 Systems such as Atomic Design attempt to solve an impossible problem in an ever changing landscape. It will be exciting to see how this modular way of thinking will affect the way we build the web, particularly with web components on the horizon — we just need to be careful we don't make the very human problem of design a decidedly mechanical one.
+
+export default ({ children }) => (
+  <WritingSingle meta={meta}>{children}</WritingSingle>
+);

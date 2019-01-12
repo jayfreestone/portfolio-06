@@ -82,4 +82,8 @@ img {
 
 code {
   font-family: var(--monospace-font);
+  background-color: var(--t-background-lift);
+  padding: 0 var(--s-1);
+  font-size: var(--fs-sm);
+  box-decoration-break: clone;
 }

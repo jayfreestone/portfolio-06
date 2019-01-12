@@ -82,31 +82,33 @@ const Index = () => (
       </Section>
     </div>
     <Section>
-      <H>Work</H>
-      <ul>
-        {work.map(({ content, meta: projectMeta }) => (
-          <li>
-            <Section>
-              <H>{projectMeta.title}</H>
-              <time dateTime={projectMeta.date}>
-                {projectMeta.date}
-              </time>
+      <section id="work">
+        <H>Work</H>
+        <ul>
+          {work.map(({ content, meta: projectMeta }) => (
+            <li>
               <Section>
-                {content}
+                <H>{projectMeta.title}</H>
+                <time dateTime={projectMeta.date}>
+                  {projectMeta.date}
+                </time>
+                <Section>
+                  {content}
+                </Section>
+                {projectMeta.skills && (
+                  <ul>
+                    {projectMeta.skills.map(projectSkill => (
+                      <li>
+                        {projectSkill}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </Section>
-              {projectMeta.skills && (
-                <ul>
-                  {projectMeta.skills.map(projectSkill => (
-                    <li>
-                      {projectSkill}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </Section>
-          </li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
     </Section>
   </div>
 );

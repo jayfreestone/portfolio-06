@@ -17,8 +17,16 @@ const postIndex = fg.sync(
     const jsx = mdx.sync(fs.readFileSync(entry, { encoding: 'utf-8' }));
     const matches = /export const meta = ({(\s*?.*?)*?})/gim.exec(jsx);
     const meta = parse(matches[1]);
+    console.log(entry);
+
+    const filename = /[ \w-]+?(?=\.)/g.exec(entry)[0];
+
+    const slug = filename !== 'index'
+      ? filename
+      : /([ \w-]+)(?=\/[ \w-]+?(?=\.))/g.exec(entry)[0];
+
     return Object.assign({}, meta, {
-      slug: '/writing/' + /[ \w-]+?(?=\.)/g.exec(entry)[0],
+      slug: '/writing/' + slug,
     });
   }},
 );

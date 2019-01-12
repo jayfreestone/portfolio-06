@@ -1,25 +1,32 @@
 .prose {
-  .h2,
-  h2 {
-    margin-top: var(--s-4);
-    margin-bottom: var(--s-3);
+  --prose-top-margin: var(--s-3);
+
+  > * + *,
+  > div > * + * {
+    margin-top: var(--prose-top-margin);
   }
 
-  .h3,
-  h3 {
-    margin-top: var(--s-4);
-    margin-bottom: var(--s-2);
-  }
+  // .h2,
+  // h2 {
+  //   margin-top: var(--s-4);
+  //   margin-bottom: var(--s-3);
+  // }
 
-  p {
-    margin-bottom: var(--s-3);
-  }
+  // .h3,
+  // h3 {
+  //   margin-top: var(--s-4);
+  //   margin-bottom: var(--s-2);
+  // }
 
-  aside {
-    color: var(--t-whisper);
-    font-style: italic;
-    padding-bottom: var(--s-3);
-  }
+  // p {
+  //   margin-bottom: var(--s-3);
+  // }
+
+  // aside {
+  //   color: var(--t-whisper);
+  //   font-style: italic;
+  //   padding-bottom: var(--s-3);
+  // }
 
   @supports (mask-size: 1em) {
     a[href*="//"]:not([href*="jayfreestone.com"]) {
@@ -36,11 +43,11 @@
     }
   }
 
-  > *:first-child {
-    margin-top: 0;
-  }
+  // > *:first-child {
+  //   margin-top: 0;
+  // }
 
-  > *:last-child {
-    margin-bottom: 0;
-  }
+  // > *:last-child {
+  //   margin-bottom: 0;
+  // }
 }

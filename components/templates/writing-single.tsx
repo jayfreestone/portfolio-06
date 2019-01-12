@@ -12,7 +12,7 @@ class WritingSingle extends React.Component<WritingSingleProps> {
             {meta.date}
             <Section>
                 <Prose>
-                    {children}
+                  {children}
                 </Prose>
             </Section>
         </article>

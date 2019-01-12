@@ -7,6 +7,7 @@ const {
 } = require('next/constants');
 const withSass = require('@zeit/next-sass');
 const withTypescript = require('@zeit/next-typescript');
+const withImages = require('next-images')
 const withPathMap = require('./utils/next/withPathMap');
 const withMDX = require('./utils/next/withMDX');
 const withEnv = require('./utils/next/withEnv');
@@ -14,6 +15,7 @@ const withEnv = require('./utils/next/withEnv');
 module.exports = (phase, { defaultConfig }) => R.pipe(
   withSass,
   withTypescript,
+  withImages,
   // withPathMap,
   withEnv,
   // R.when(
