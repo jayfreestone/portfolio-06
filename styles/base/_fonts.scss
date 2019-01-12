@@ -34,3 +34,11 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'ibm-mono';
+  src: url('/static/fonts/ibm-mono/ibmplexmono-regular.woff2') format('woff2'),
+  url('/static/fonts/ibm-mono/ibmplexmono-regular.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

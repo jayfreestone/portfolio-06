@@ -17,12 +17,15 @@ class Code extends React.Component<CodeProps> {
       ? className.split('language-')[1]
       : 'javascript';
     return (
-      <pre>
-        <Html
-          element="code"
-          html={this.highlight(lang, String(children))}
-        />
-      </pre>
+      <div className="code">
+        <span className="code__language">{lang}</span>
+        <div className="code__content">
+          <Html
+            element="code"
+            html={this.highlight(lang, String(children))}
+          />
+        </div>
+      </div>
     );
   }
 }

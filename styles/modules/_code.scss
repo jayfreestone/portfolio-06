@@ -1,0 +1,23 @@
+.code {
+  @include clearfix;
+  background-color: var(--t-background-lift);
+  padding: var(--s-2);
+  position: relative;
+}
+
+.code__language {
+  float: right;
+  text-transform: uppercase;
+  font-family: var(--monospace-font);
+  font-size: var(--fs-xs);
+  background-color: var(--t-background);
+  padding: var(--s-2) var(--s-3);
+  margin-left: var(--s-2);
+  margin-bottom: var(--s-2);
+}
+
+.code__content {
+  float: left;
+  font-size: var(--fs-sm);
+  padding: 0 var(--s-2);
+}
