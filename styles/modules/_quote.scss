@@ -1,0 +1,20 @@
+.quote {
+  display: flex;
+
+  &:before {
+    content: '“';
+    height: 0;
+    line-height: 1;
+    font-size: var(--fs-xl);
+    font-family: var(--monospace-font);
+    color: var(--t-grey);
+    margin-right: var(--s-1);
+  }
+}
+
+.quote__attribution {
+  color: var(--t-grey);
+  font-size: var(--fs-sm);
+  margin-top: var(--s-2);
+  overflow: hidden;
+}

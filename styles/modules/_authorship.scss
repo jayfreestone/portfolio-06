@@ -1,0 +1,20 @@
+.authorship {
+  @include clearfix;
+  background-color: var(--t-background);
+}
+
+.authorship__title {
+  display: inline-block;
+}
+
+.authorship__image {
+  width: 4em;
+  float: right;
+  mix-blend-mode: lighten;
+  margin-left: var(--s-3);
+}
+
+.authorship__copy {
+  overflow: hidden;
+  font-size: var(--fs-sm);
+}

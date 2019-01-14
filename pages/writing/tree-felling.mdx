@@ -1,4 +1,5 @@
 import WritingSingle from '../../components/templates/writing-single';
+import Quote from '../../components/Quote';
 
 export const meta = {
   title: 'Tree Felling',
@@ -9,11 +10,25 @@ At Responsive Day Out Oliver Reichenstein introduced the ‘[Container Model](ht
 
 Haley does a great job of breaking down what *exactly* the container model is, and how it was [used on The Guardian](http://next.theguardian.com/blog/container-model-blended-content/):
 
-> A container is a full width horizontal element which contains a collection of content. Pages hold a series of containers which are stacked on top of each other, the most important at the top and the least important at the bottom. Containers are self sufficient (hence the name) and as a result can easily appear in multiple locations in a variety of combinations… A container full of blended content can aggregate content from across the whole of the Guardian. Nick Haley
+<Quote attribution={{ author: 'Nick Haley' }}>
+  A container is a full width horizontal element which contains a collection of content. Pages hold a series of containers which are stacked on top of each other, the most important at the top and the least important at the bottom. Containers are self sufficient (hence the name) and as a result can easily appear in multiple locations in a variety of combinations… A container full of blended content can aggregate content from across the whole of the Guardian.
+</Quote>
 
 At first pass this sounds like a mobile-first approach: cut off the sidebars, decide what’s important and then stack it up. Better still, make everything a widget. Yet, in essence, Reichenstein and Haley are **inviting a return to the original notion of hypertext**: a spiderweb of relationships, spinning  outwards in a centrifugal motion. Vannevar originally envisioned a form of hypertext in which items are interlinked rather than relying on a tree-based hierarchy:
 
-> It affords an immediate step…to associative indexing, the basic idea of which is a provision whereby any item may be caused at will to select immediately and automatically another…The process of tying two items together is the important thing. Vannevar Bush **As We Think**
+<Quote
+  attribution={{
+    author: 'Vannevar Bush, As We Think',
+  }}
+>
+
+  It affords an immediate step…to associative indexing, the basic idea of which
+  is a provision whereby any item may be caused at will to select immediately and
+  automatically another…The process of tying two items together is the important
+  thing.
+
+</Quote>
+
 
 For all our advancements in responsive & user-centric design we often still work as if we’re designing an encyclopaedia. In place of (or in supplement to) a gargantuan tree-like navigation, perhaps we ought to craft our sites to take better advantage of the technology which underpins it: hypertext. The ability to leapfrog between worlds is what makes the web such a versatile and appealing medium.
 
@@ -21,7 +36,9 @@ It's an interesting way to approach the web, and although mobile-first has encou
 
 You might feel this brings us back to a narrow column of content, [something we’ve also been trying to avoid](http://alistapart.com/article/surveying-the-big-screen), but it doesn’t have to. In the spirit of progressive enhancement we can scale up assets and type sizes, rearranging inter-container elements to improve the experience without breaking out of the single column grid. There’s no reason why we shouldn’t adopt nested grids for related content — the principle here is to think of a site as a linear set of boxes containing *related* information. As Oliver said:
 
-> <span>…we can chop down the tree.</span>
+<Quote>
+  …we can chop down the tree.
+</Quote>
 
 Doesn’t that sound appealing?
 

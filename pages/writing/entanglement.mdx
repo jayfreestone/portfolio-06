@@ -1,4 +1,5 @@
 import WritingSingle from '../../components/templates/writing-single';
+import Quote from '../../components/Quote';
 
 export const meta = {
   title: 'Entanglement',
@@ -12,8 +13,15 @@ Design in the browser, start with style tiles, build element collages — use Ke
 That would be fine, but none are singularly effective. Full-comps are not representative, style-tiles don’t go far enough, element collages are isolated and confusing for clients, designing in the browser produces tired work. There is no ‘good’ way of designing for the web, since the scope has gotten out of hand.
 
 This tweet from Mark Boulton sums up the situation:
-> On the web, we do this: <br/>Client: 'I'd like a simple website' <br/> Designer: 'Actually, no, you need a design system'
->[@markboulton](https://twitter.com/markboulton/status/666287642045243392)
+
+<Quote
+  attribution={{
+    author: '@markboulton',
+    link: 'https://twitter.com/markboulton/status/666287642045243392',
+  }}
+>
+  On the web, we do this: <br/>Client: 'I'd like a simple website' <br/> Designer: 'Actually, no, you need a design system'
+</Quote>
 
 It’s funny because it’s true. We’ve taken to making everything a  system, module, or component. We do not design ‘pages’, we architect systems. Our industry has grown up, so we build for tomorrow not today. *Tomorrow* our system may need to roll out across a hundred sub-brands and micro-sites. We get ease of building, and ease of design (or the absence of it), they get consistency. Everyone gets added complexity for free.
 

@@ -28,6 +28,46 @@
   //   padding-bottom: var(--s-3);
   // }
 
+  ul {
+    --counter-width: 3em;
+    list-style: none;
+    padding-left: var(--counter-width);
+
+    li {
+      &:before {
+        content: '•';
+        color: var(--t-grey);
+        width: var(--counter-width);
+        margin-left: calc(var(--counter-width) * -1);
+        padding-right: var(--s-2);
+        display: inline-block;
+        text-align: right;
+      }
+    }
+  }
+
+  ol {
+    --counter-width: 3em;
+    list-style: none;
+    counter-reset: ordered-counter;
+    padding-left: var(--counter-width);
+
+    > li {
+      counter-increment: ordered-counter;
+
+      &:before {
+        content: counter(ordered-counter) '.';
+        color: var(--t-grey);
+        font-family: var(--monospace-font);
+        text-align: right;
+        display: inline-block;
+        width: var(--counter-width);
+        margin-left: calc(var(--counter-width) * -1);
+        padding-right: var(--s-1);
+      }
+    }
+  }
+
   @supports (mask-size: 1em) {
     a[href*="//"]:not([href*="jayfreestone.com"]) {
       &:after {

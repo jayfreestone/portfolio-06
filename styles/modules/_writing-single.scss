@@ -1,0 +1,27 @@
+.writing-single {
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.writing-single__header {
+  margin-bottom: var(--s-3);
+  // padding-bottom: var(--s-3);
+  // margin-bottom: var(--s-3);
+  // border-bottom: 1px solid var(--t-grey);
+}
+
+.writing-single__date {
+}
+
+.writing-single__meta {
+  font-size: var(--fs-sm);
+  color: var(--t-grey);
+  margin-top: var(--s-3);
+}
+
+.writing-single__author {
+  padding-top: var(--s-4);
+  margin-top: var(--s-4);
+  border-top: 1px solid var(--t-keyline);
+}

@@ -17,6 +17,7 @@ class Image extends React.Component<ImageProps, ImageState> {
     rootId: 'image-lazyload',
     rootMargin: '0px',
     threshold: 0.1,
+    triggerOnce: true,
     onChange: this.handleIntersection.bind(this),
   };
 
@@ -28,19 +29,10 @@ class Image extends React.Component<ImageProps, ImageState> {
     const { src, className, width, height } = this.props;
     const { hasIntersected } = this.state;
 
-    if (hasIntersected) {
-      return (
-        <img
-          src={src}
-          className={className}
-        />
-      );
-    }
-
     return (
       <Observer {...this.options}>
         <img
-          src={Image.generatePlaceholderSrc(width, height)}
+          src={hasIntersected ? src : Image.generatePlaceholderSrc(width, height)}
           className={className}
         />
       </Observer>
