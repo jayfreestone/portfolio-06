@@ -33,7 +33,7 @@
     svg,
     img {
       width: 35%;
-      max-width: 22em;
+      max-width: 35em;
       float: right;
       shape-margin: var(--s-3);
       shape-outside: url('/static/img/jf-bar-mask.svg'); 
@@ -56,7 +56,7 @@
 
 .banner__title {
   padding-top: var(--s-2);
-  font-size: calc( 1.5rem + 16 * (100vw - 320px) / (960 - 320) );
+  font-size: calc( 1.5rem + 19 * (100vw - 320px) / (960 - 320) );
 
   p {
     display: inline;

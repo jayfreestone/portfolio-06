@@ -1,6 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import api from '../utils/api';
+import WritingPreview from '../components/WritingPreview';
+import H from '../components/H';
 
 class Writing extends React.Component<WritingProps> {
   static async getInitialProps() {
@@ -9,22 +10,21 @@ class Writing extends React.Component<WritingProps> {
   }
 
   render() {
-    console.log(this.props.posts);
     return (
       <div>
+        <div>
+          <H>Writing</H>
+        </div>
         {this.props.posts && (
-          <ul>
-            {this.props.posts.map(post => (
-              <li key={post.slug}>
-                <Link
-                  href={{
-                    pathname: post.slug,
-                  }}
-                >
-                  <a>
-                    {post.title}
-                  </a>
-                </Link>
+          <ul className="writing-grid">
+            {this.props.posts.map(({ title, date, slug, excerpt }) => (
+              <li key={slug}>
+                <WritingPreview
+                  title={title}
+                  date={date}
+                  slug={slug}
+                  excerpt={excerpt}
+                />
               </li>
             ))}
           </ul>
@@ -39,6 +39,7 @@ interface WritingProps {
     slug: string;
     title: string;
     date: string;
+    excerpt: string;
   }[];
 }
 

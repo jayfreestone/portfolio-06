@@ -1,0 +1,6 @@
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  list-style: none;
+  grid-gap: var(--s-4);
+}

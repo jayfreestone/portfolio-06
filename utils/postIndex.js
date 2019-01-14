@@ -8,6 +8,7 @@ function parse(str) {
     .replace(/'/g, '"')
     .replace(/,\s*}/g, '}')
     .replace(/([^\s]+)(?=:)/g, '"$1"');
+    console.log(cleaned);
   return JSON.parse(cleaned);
 }
 
@@ -17,7 +18,6 @@ const postIndex = fg.sync(
     const jsx = mdx.sync(fs.readFileSync(entry, { encoding: 'utf-8' }));
     const matches = /export const meta = ({(\s*?.*?)*?})/gim.exec(jsx);
     const meta = parse(matches[1]);
-    console.log(entry);
 
     const filename = /[ \w-]+?(?=\.)/g.exec(entry)[0];
 
