@@ -3,13 +3,14 @@ import Image from '../components/Image';
 import H from '../components/H';
 import Section from '../components/Section';
 import Prose from '../components/Prose';
+import Work from '../components/Work';
 import Bio, { meta } from './../data/writing/bio.mdx';
 
 const { experience, skills, education, social, work } = meta;
 
 const Index = () => (
-  <div>
-    <div className="banner">
+  <div className="bio">
+    <div className="bio__section banner">
       <div className="banner__image">
         <img src="/static/img/jf-bar-mask.svg" alt="" />
         <img src="/static/img/jf-bar.png" alt="" />
@@ -23,7 +24,7 @@ const Index = () => (
         </Prose>
       </div>
     </div>
-    <div className="stats">
+    <section id="stats" className="bio__section bio__section--contain stats">
       <Section>
         <div className="stats__section">
           <H className="stats__title">Experience</H>
@@ -80,31 +81,19 @@ const Index = () => (
           </dl>
         </div>
       </Section>
-    </div>
+    </section>
     <Section>
-      <section id="work">
+      <section id="work" className="bio__section bio__section--contain">
         <H>Work</H>
-        <ul>
+        <ul className="work-list">
           {work.map(({ content, meta: projectMeta }) => (
-            <li>
-              <Section>
-                <H>{projectMeta.title}</H>
-                <time dateTime={projectMeta.date}>
-                  {projectMeta.date}
-                </time>
-                <Section>
-                  {content}
-                </Section>
-                {projectMeta.skills && (
-                  <ul>
-                    {projectMeta.skills.map(projectSkill => (
-                      <li>
-                        {projectSkill}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </Section>
+            <li className="work-list__item">
+              <Work
+                title={projectMeta.title}
+                date={projectMeta.date}
+                skills={projectMeta.skills}
+                content={content}
+              />
             </li>
           ))}
         </ul>

@@ -5,47 +5,39 @@
   @media (min-width: 50em) {
     margin-right: calc(var(--s-h-pad) * -1);
   }
-  // align-items: end;
-  // grid-template-rows: 1fr;
-  //grid-gap: var(--s-h-pad);
-  //--max-col-width: calc(var(--max-content-width) / 12);
-  //grid-template-columns: 1fr var(--s-h-pad) repeat(12, minmax(1rem, var(--max-col-width))) var(--s-h-pad) 1fr;
-  //grid-template-columns: var(--horizontal-pad) 1fr repeat(8,minmax(1rem,var(--max-col-width))) 1fr var(--horizontal-pad);
-  //grid-template-columns: var(--s-h-pad) 1fr var(--s-h-pad);
+
+  // @media (min-width: $bio-full-bp) {
+  //   margin-right: 0;
+  // }
 }
 
 .banner__image {
   position: relative;
 
-  // &:before {
-  //   content: '';
-  //   width: 1px;
-  //   float: right;
-  //   padding-bottom: 135%;
-  //   margin-left: -1px;
-  // }
   svg,
   img {
     mix-blend-mode: lighten;
   }
 
-  @media (min-width: 22em) {
-    svg,
-    img {
+  svg,
+  img {
+    @media (min-width: 22em) {
       width: 35%;
       max-width: 35em;
       float: right;
       shape-margin: var(--s-3);
       shape-outside: url('/static/img/jf-bar-mask.svg'); 
     }
-  }
 
-  @media (min-width: 50em) {
-    svg,
-    img {
-      // margin-right: -6%;
+    @media (min-width: 50em) {
       margin-right: -4em;
     }
+
+    // @media (min-width: $bio-full-bp) {
+    //   margin-right: 0;
+    //   float: none;
+    //   width: 100%;
+    // }
   }
 
   img:nth-child(2) {
@@ -57,6 +49,10 @@
 .banner__title {
   padding-top: var(--s-2);
   font-size: calc( 1.5rem + 19 * (100vw - 320px) / (960 - 320) );
+
+  // @media (min-width: $bio-full-bp) {
+  //   font-size: 2em;
+  // }
 
   p {
     display: inline;

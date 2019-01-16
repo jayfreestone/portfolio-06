@@ -13,8 +13,15 @@ h2,
 
 h3,
 .h3 {
-  font-size: var(--fs-sm);
+  font-size: 1em;
   font-weight: bold;
   //color: var(--t-whisper);
   //text-transform: uppercase;
+}
+
+h4,
+.h4 {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }

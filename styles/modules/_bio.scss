@@ -1,0 +1,30 @@
+.bio {
+}
+
+.bio__section + .bio__section {
+  margin-top: var(--s-3);
+
+  @media(min-width: 40em) {
+    margin-top: var(--s-5);
+  }
+}
+
+.bio__section--contain {
+  // @include container;
+}
+
+.bio__banner {
+  grid-area: banner;
+
+  @media(min-width: $bio-full-bp) {
+    align-self: end;
+  }
+}
+
+.bio__stats {
+  grid-area: stats;
+}
+
+.bio__work {
+  grid-area: work;
+}
