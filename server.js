@@ -9,14 +9,6 @@ app.prepare()
   .then(() => {
     const server = express();
 
-    // server.use('/api', require('./server/api'));
-
-    // server.get('/writing/:slug', (req, res) => {
-    //   const actualPage = '/writing-single';
-    //   const queryParams = { slug: req.params.slug };
-    //   app.render(req, res, actualPage, queryParams);
-    // });
-
     server.get('*', (req, res) => {
       return handle(req, res)
     });
