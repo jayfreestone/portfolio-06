@@ -5,17 +5,9 @@
   grid-template-columns: 1fr max-content;
   grid-template-areas: 'title date' 'content content' 'skills skills';
 
-  @media (min-width: 40em) {
-    grid-template-columns: max-content 1fr;
-    grid-template-areas:
-      'date title'
-      '. content'
-      '. skills'
-    ;
-  }
-
   @media (min-width: 50em) {
-    grid-template-columns: max-content 1fr 10em;
+    grid-column-gap: var(--s-4);
+    grid-template-columns: 2.5rem 1fr 10em;
     grid-template-areas:
       'date title title'
       '. content skills'
@@ -37,10 +29,16 @@
 
 .work__content {
   grid-area: content;
+  max-width: 45em;
 }
 
 .work__skills {
   grid-area: skills;
+  margin-top: var(--s-2);
+
+  @media(min-width: 50em) {
+    margin-top: 0;
+  }
 
   > ul {
     list-style: none;

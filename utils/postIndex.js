@@ -12,7 +12,7 @@ function parse(str) {
   return JSON.parse(cleaned);
 }
 
-const postIndex = fg.sync(
+const posts = fg.sync(
   ['./pages/writing/**/*.mdx'],
   { transform: (entry) => {
     const jsx = mdx.sync(fs.readFileSync(entry, { encoding: 'utf-8' }));
@@ -30,5 +30,9 @@ const postIndex = fg.sync(
     });
   }},
 );
+
+const postIndex = posts.sort((a, b) => (
+  new Date(a.date) < new Date(b.date)
+));
 
 module.exports = postIndex;

@@ -1,4 +1,8 @@
-.writing-grid {
+.writing__title {
+  margin-bottom: var(--s-2);
+}
+
+.writing__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
   list-style: none;

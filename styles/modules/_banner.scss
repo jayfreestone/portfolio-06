@@ -1,14 +1,10 @@
 .banner {
   overflow: hidden;
+}
+
+.banner__inner {
+  @include container;
   background-color: var(--t-background);
-
-  @media (min-width: 50em) {
-    margin-right: calc(var(--s-h-pad) * -1);
-  }
-
-  // @media (min-width: $bio-full-bp) {
-  //   margin-right: 0;
-  // }
 }
 
 .banner__image {
@@ -48,7 +44,7 @@
 
 .banner__title {
   padding-top: var(--s-2);
-  font-size: calc( 1.5rem + 19 * (100vw - 320px) / (960 - 320) );
+  font-size: calc( 1.5rem + 17 * (100vw - 320px) / (960 - 320) );
 
   // @media (min-width: $bio-full-bp) {
   //   font-size: 2em;

@@ -1,6 +1,6 @@
-@mixin space {
-  margin-top: calc(var(--s-3) * -1);
-  margin-left: calc(var(--s-3) * -1);
+@mixin space($spacing: var(--s-3)) {
+  margin-top: calc(#{$spacing} * -1);
+  margin-left: calc(#{$spacing} * -1);
 
   &:before {
     content: '';
@@ -9,8 +9,8 @@
   }
 
   > * {
-    padding-left: var(--s-3);
-    padding-top: var(--s-3);
+    padding-left: $spacing;
+    padding-top: $spacing;
   }
 }
 

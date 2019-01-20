@@ -1,5 +1,5 @@
 .work-list {
-  @include space;
+  @include space(var(--s-4));
   list-style: none;
 }
 

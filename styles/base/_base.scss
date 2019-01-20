@@ -47,7 +47,6 @@ html {
   box-sizing: inherit;
 }
 
-
 body {
   --t-link-color: var(--t-accent);
   --t-background: var(--t-black);
@@ -61,7 +60,7 @@ body {
   font-family: var(--primary-font);
   background-color: var(--t-background);
   line-height: var(--line-height);
-  padding: 0 var(--s-h-pad);
+  // padding: 0 var(--s-h-pad);
 
   @media (min-width: 40em) {
     --line-height: 1.625;
