@@ -18,7 +18,19 @@ const Index = () => (
       <div className="banner__inner">
         <div className="banner__image">
           <img src="/static/img/jf-bar-mask.svg" alt="" />
-          <img src="/static/img/jf-bar.png" alt="" />
+          <img
+            srcSet="
+              /static/img/jf-bar-sm.jpg 512w,
+              /static/img/jf-bar-md.jpg 1024w,
+              /static/img/jf-bar-lg.jpg 2048w
+            "
+            sizes="
+              calc(100vw - (2 * var(--s-h-pad))),
+              (min-width: 22em) 35vw
+            "
+            src="/static/img/jf-bar-md.jpg"
+            alt="Photo of Jay sitting with a drink"
+          />
         </div>
         <div className="banner__title h1">
           <Prose>

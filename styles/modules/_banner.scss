@@ -15,7 +15,6 @@
     mix-blend-mode: lighten;
   }
 
-  svg,
   img {
     @media (min-width: 22em) {
       width: 35%;
@@ -28,27 +27,22 @@
     @media (min-width: 50em) {
       margin-right: -4em;
     }
+  }
 
-    // @media (min-width: $bio-full-bp) {
-    //   margin-right: 0;
-    //   float: none;
-    //   width: 100%;
-    // }
+  img:first-child {
+    opacity: 0;
   }
 
   img:nth-child(2) {
     position: absolute;
     right: 0;
+    mask-image: url(/static/img/jf-bar-mask.svg);
   }
 }
 
 .banner__title {
   padding-top: var(--s-2);
   font-size: calc( 1.5rem + 17 * (100vw - 320px) / (960 - 320) );
-
-  // @media (min-width: $bio-full-bp) {
-  //   font-size: 2em;
-  // }
 
   p {
     display: inline;
