@@ -11,6 +11,9 @@ const WritingSingle: React.FunctionComponent<WritingSingleProps> = ({
   meta,
 }) => (
   <div className="writing-single">
+    <Head>
+      <title>{meta.title} | Jay Freestone</title>
+    </Head>
     <article>
       <header className="writing-single__header">
         <H>{meta.title}</H>
