@@ -1,30 +1,14 @@
 import React, { Fragment } from 'react';
-import Head from 'next/head';
-import getConfig from 'next/config';
 import H from '../components/H';
 import Section from '../components/Section';
 import Prose from '../components/Prose';
 import Work from '../components/Work';
 import Bio, { meta } from './../data/writing/bio.mdx';
 
-const { publicRuntimeConfig: { SITE_URL } } = getConfig();
-
-const { experience, skills, education, social, work } = meta;
+const { experience, skills, education, work } = meta;
 
 const Index = () => (
   <div className="bio">
-    <Head>
-      <title>Jay Freestone | Front-end Developer & Designer</title>
-      <meta name="twitter:url" content={SITE_URL}/>
-      <meta name="twitter:title" property="og:title" content="Jay Freestone | Front-end Developer & Designer"/>
-      <meta name="twitter:image" content={`${SITE_URL}/static/img/jf-social.jpg`}/>
-      <meta name="twitter:card" content="summary"/>
-      <meta name="twitter:site" content="@jayfreestone"/>
-      <meta property="og:url" content={SITE_URL} />
-      <meta property="og:title" content="Jay Freestone | Front-end Developer & Designer"/>
-      <meta property="og:type" content="website"/>
-      <meta property="og:image" content={`${SITE_URL}/static/img/jf-social.jpg`}/>
-    </Head>
     <div className="bio__section banner">
       <div className="banner__inner">
         <div className="banner__image">

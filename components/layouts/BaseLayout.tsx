@@ -8,7 +8,6 @@ const BaseLayout: React.FunctionComponent = ({ children }) => (
   <div className="site">
     <Head>
       <link rel="preload" as="image" href="/static/img/jf-bar-mask.svg"/>
-      <link rel="icon" href="/static/img/favicon.png" type="image/png"/>
     </Head>
     <div className="site__header container">
       <Header

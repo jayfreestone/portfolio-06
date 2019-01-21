@@ -14,6 +14,19 @@ const WritingSingle: React.FunctionComponent<WritingSingleProps> = ({
   <div className="writing-single">
     <Head>
       <title>{meta.title} | Jay Freestone</title>
+      <meta
+        name="description"
+        content={meta.excerpt}
+      />
+      <meta
+        name="twitter:title"
+        property="og:title"
+        content={`${meta.title} | Jay Freestone`}
+      />
+      <meta
+        property="og:title"
+        content={`${meta.title} | Jay Freestone`}
+      />
     </Head>
     <article>
       <header className="writing-single__header">
@@ -38,6 +51,8 @@ const WritingSingle: React.FunctionComponent<WritingSingleProps> = ({
           className="authorship__image"
           src="/static/img/jay-freestone-avatar.jpg"
           alt="Jay Freestone in Basel"
+          width={100}
+          height={100}
         />
         <div className="authorship__copy">
           <p>
@@ -54,6 +69,7 @@ interface WritingSingleProps {
   meta: {
     title: string;
     date: string;
+    excerpt: string;
   };
 }
 
