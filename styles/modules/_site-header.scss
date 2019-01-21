@@ -1,13 +1,16 @@
 .site-header {
   --sh-link-spacing: var(--s-2);
-  margin: var(--s-4) calc(var(--sh-link-spacing) * -1);
+  margin-left: calc(var(--sh-link-spacing) * -1);
+  margin-right: calc(var(--sh-link-spacing) * -1);
+  padding-top: var(--s-4);
+  padding-bottom: var(--s-4);
   display: flex;
   align-items: center;
 
   @media (min-width: 40em) {
     --sh-link-spacing: var(--s-3);
-    margin-top: var(--s-5);
-    margin-bottom: calc(var(--s-4) * 1.5);
+    padding-top: var(--s-5);
+    padding-bottom: calc(var(--s-4) * 1.5);
   }
 }
 

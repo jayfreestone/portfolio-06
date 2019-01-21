@@ -1,17 +1,15 @@
-//.site {
-//  display: grid;
-//}
-//
-//.site__header {
-//  grid-column: 1 / span 1;
-//  grid-row: 1 / span 1;
-//}
-//
-//.site__body {
-//  grid-column: 1 / span 1;
-//  grid-row: 1 / span 2;
-//}
-
 .site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.site__header,
+.site__main,
+.site__footer {
+  width: 100%;
+}
+
+.site__main {
+  flex-grow: 1;
 }
