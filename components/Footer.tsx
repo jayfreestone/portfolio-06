@@ -5,12 +5,12 @@ import { meta } from './../data/writing/bio.mdx';
 const { social } = meta;
 
 const Footer = () => (
-  <footer className="site-footer">
+  <footer className="site-footer" id="contact">
     <div className="container">
       <div className="site-footer__inner">
         <Section>
           <div className="site-footer__title">
-            <H id="contact">Contact</H>
+            <H>Contact</H>
           </div>
           <dl className="site-footer__contact">
             {Object.keys(social).map((key) => {
@@ -23,6 +23,7 @@ const Footer = () => (
                       href={item.link}
                       {...(item.link.indexOf('http') > -1 ? {
                         target: '_blank',
+                        rel: 'noopener',
                       } : {})}
                     >
                       {item.label}
