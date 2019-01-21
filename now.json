@@ -6,8 +6,8 @@
   ],
   "routes": [
     {
-      "source": "/journal/:slug",
-      "destination": "/writing/:id",
+      "src": "/journal/:slug",
+      "dest": "/writing/:id",
       "status": 301
     }
   ]
