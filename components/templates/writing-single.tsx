@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 import H from '../H';
 import Section from '../Section';
 import Prose from '../Prose';
@@ -36,6 +37,7 @@ const WritingSingle: React.FunctionComponent<WritingSingleProps> = ({
         <Image
           className="authorship__image"
           src="/static/img/jay-freestone-avatar.jpg"
+          alt="Jay Freestone in Basel"
         />
         <div className="authorship__copy">
           <p>

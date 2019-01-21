@@ -26,12 +26,13 @@ class Image extends React.Component<ImageProps, ImageState> {
   }
 
   render() {
-    const { src, className, width, height } = this.props;
+    const { src, className, alt, width, height } = this.props;
     const { hasIntersected } = this.state;
 
     return (
       <Observer {...this.options}>
         <img
+          alt={alt}
           src={hasIntersected ? src : Image.generatePlaceholderSrc(width, height)}
           className={className}
         />
@@ -42,6 +43,7 @@ class Image extends React.Component<ImageProps, ImageState> {
 
 interface ImageProps {
   src: string;
+  alt?: string;
   className?: string;
   width?: number;
   height?: number;
