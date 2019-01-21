@@ -3,5 +3,17 @@
   "version": 2,
   "builds": [
     { "src": "package.json", "use": "@now/static-build" }
+  ],
+  "redirects": [
+    { "source": "/journal/:slug", "destination": "/writing/:id" }
+  ],
+  "headers": [
+    {
+      "source" : "**/*.@(jpg|jpeg|gif|png|svg|woff|woff2)",
+      "headers" : [{
+        "key" : "Cache-Control",
+        "value" : "max-age=7200"
+      }]
+    }
   ]
 }
