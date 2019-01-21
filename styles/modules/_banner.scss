@@ -44,6 +44,10 @@
   padding-top: var(--s-2);
   font-size: calc( 1.5rem + 17 * (100vw - 320px) / (960 - 320) );
 
+  @media(min-width: 80em) {
+    font-size: 3.3rem;
+  }
+
   p {
     display: inline;
 
