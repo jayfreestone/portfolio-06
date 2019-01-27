@@ -10,5 +10,8 @@
       "dest": "/writing/$id",
       "status": 301
     }
-  ]
+  ],
+  "env": {
+    "SITE_URL": "https://www.jayfreestone.com"
+  }
 }
