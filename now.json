@@ -12,6 +12,7 @@
     }
   ],
   "env": {
-    "SITE_URL": "https://www.jayfreestone.com"
+    "SITE_URL": "https://www.jayfreestone.com",
+    "ANALYTICS_UID": "UA-133309119-1"
   }
 }

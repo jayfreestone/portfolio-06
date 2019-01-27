@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Head from 'next/head';
 import getConfig from 'next/config';
 import App, { Container } from 'next/app';
 import MDX from '../components/wrappers/MDX';
 import BaseLayout from '../components/layouts/BaseLayout';
+import { createMarkup } from '../components/Html';
 
-const { publicRuntimeConfig: { SITE_URL } } = getConfig();
+const { publicRuntimeConfig: { SITE_URL, ANALYTICS_UID } } = getConfig();
 
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -29,7 +30,7 @@ class MyApp extends App {
             href="/static/fonts/graphik/subset-a25573ad4f912b1ffce4dc60a7e784a9.woff2"
             as="font"
             type="font/woff2"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="icon" href="/static/img/favicon.png" type="image/png" />
@@ -75,6 +76,23 @@ class MyApp extends App {
             property="og:image"
             content={`${SITE_URL}/static/img/jf-social.jpg`}
           />
+          {ANALYTICS_UID && (
+            <Fragment>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_UID}`}
+              >
+              </script>
+              <script
+                dangerouslySetInnerHTML={createMarkup(`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments); }
+                  gtag('js', new Date());
+                  gtag('config', '${ANALYTICS_UID}');
+                `)}
+              />
+            </Fragment>
+          )}
         </Head>
         <BaseLayout>
           <MDX>
