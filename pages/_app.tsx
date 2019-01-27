@@ -18,62 +18,69 @@ class MyApp extends App {
     return { pageProps, pathname: ctx.pathname };
   }
 
-  render () {
+  render() {
     const { Component, pageProps, pathname } = this.props;
 
     return (
       <Container>
-        <MDX>
-          <Head>
-            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <link rel="icon" href="/static/img/favicon.png" type="image/png"/>
-            <title>Jay Freestone | Front End Developer</title>
-            <meta
-              name="description"
-              content="I’m a front-end developer living and working in East London.I currently lead the front-end team at Browser London where I help build enterprise web-apps."
-            />
-            <meta
-              name="twitter:url"
-              content={`${SITE_URL}${pathname}`}
-            />
-            <meta
-              name="twitter:title"
-              property="og:title"
-              content="Jay Freestone | Front End Developer"
-            />
-            <meta
-              name="twitter:image"
-              content={`${SITE_URL}/static/img/jf-social.jpg`}
-            />
-            <meta
-              name="twitter:card"
-              content="summary"
-            />
-            <meta
-              name="twitter:site"
-              content="@jayfreestone"
-            />
-            <meta
-              property="og:url"
-              content={`${SITE_URL}${pathname}`}
-            />
-            <meta
-              property="og:title"
-              content="Jay Freestone | Front End Developer"
-            />
-            <meta
-              property="og:type"
-              content="website"
-            />
-            <meta
-              property="og:image"
-              content={`${SITE_URL}/static/img/jf-social.jpg`}
-            />
-          </Head>
-          <BaseLayout>
+        <Head>
+          <link
+            rel="preload"
+            href="/static/fonts/graphik/subset-a25573ad4f912b1ffce4dc60a7e784a9.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+          />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <link rel="icon" href="/static/img/favicon.png" type="image/png" />
+          <title>Jay Freestone | Front End Developer</title>
+          <meta
+            name="description"
+            content="I’m a front-end developer living and working in East London.I currently lead the front-end team at Browser London where I help build enterprise web-apps."
+          />
+          <meta
+            name="twitter:url"
+            content={`${SITE_URL}${pathname}`}
+          />
+          <meta
+            name="twitter:title"
+            property="og:title"
+            content="Jay Freestone | Front End Developer"
+          />
+          <meta
+            name="twitter:image"
+            content={`${SITE_URL}/static/img/jf-social.jpg`}
+          />
+          <meta
+            name="twitter:card"
+            content="summary"
+          />
+          <meta
+            name="twitter:site"
+            content="@jayfreestone"
+          />
+          <meta
+            property="og:url"
+            content={`${SITE_URL}${pathname}`}
+          />
+          <meta
+            property="og:title"
+            content="Jay Freestone | Front End Developer"
+          />
+          <meta
+            property="og:type"
+            content="website"
+          />
+          <meta
+            property="og:image"
+            content={`${SITE_URL}/static/img/jf-social.jpg`}
+          />
+        </Head>
+        <BaseLayout>
+          <MDX>
             <Component {...pageProps} />
-          </BaseLayout>
-        </MDX>
+          </MDX>
+        </BaseLayout>
       </Container>
     );
   }
