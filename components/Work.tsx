@@ -28,7 +28,7 @@ const Work = ({
           {skills && (
             <ul>
               {skills.map(skill => (
-                <li>
+                <li key={skill}>
                   {skill}
                 </li>
               ))}

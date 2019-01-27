@@ -41,7 +41,7 @@ const Index = () => (
             <H className="stats__title">Experience</H>
             <dl>
               {experience.map(({ dates, place, role }) => (
-                <Fragment>
+                <Fragment key={`${place}-${role}`}>
                   <dt>{place}</dt>
                   <dd>
                     {role}<br />
@@ -55,7 +55,7 @@ const Index = () => (
             <H className="stats__title">Skills</H>
             <ul>
               {skills.map(skill => (
-                <li>{skill}</li>
+                <li key={skill}>{skill}</li>
               ))}
             </ul>
           </div>
@@ -63,7 +63,7 @@ const Index = () => (
             <H className="stats__title">Education</H>
             <dl>
               {education.map(({ place, qualification, date }) => (
-                <Fragment>
+                <Fragment key={`${place}-${qualification}`}>
                   <dt>{place}</dt>
                   <dd>
                     {qualification}<br />
@@ -82,7 +82,10 @@ const Index = () => (
           </div>
           <ul className="work-list">
             {work.map(({ content, meta: projectMeta }) => (
-              <li className="work-list__item">
+              <li
+                className="work-list__item"
+                key={projectMeta.title}
+              >
                 <Work
                   title={projectMeta.title}
                   date={projectMeta.date}

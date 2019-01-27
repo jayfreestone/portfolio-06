@@ -16,7 +16,7 @@ const Footer = () => (
             {Object.keys(social).map((key) => {
               const item = social[key];
               return (
-                <Fragment>
+                <Fragment key={item.type}>
                   <dt>{item.type}</dt>
                   <dd>
                     <a
