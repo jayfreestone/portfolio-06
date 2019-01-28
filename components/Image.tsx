@@ -1,5 +1,6 @@
 import React from 'react';
 import Observer from '@researchgate/react-intersection-observer';
+import hasIn from 'ramda/es/hasIn';
 
 class Image extends React.Component<ImageProps, ImageState> {
   static generatePlaceholderSrc(width: number, height: number): string {
@@ -26,7 +27,7 @@ class Image extends React.Component<ImageProps, ImageState> {
   }
 
   render() {
-    const { src, className, alt, width, height } = this.props;
+    const { src, srcset, sizes, className, alt, width, height } = this.props;
     const { hasIntersected } = this.state;
 
     return (
@@ -34,6 +35,10 @@ class Image extends React.Component<ImageProps, ImageState> {
         <img
           alt={alt}
           src={hasIntersected ? src : Image.generatePlaceholderSrc(width, height)}
+          {...(hasIntersected ? {
+            sizes,
+            srcSet: srcset,
+          } : {})}
           className={className}
         />
       </Observer>
@@ -43,6 +48,8 @@ class Image extends React.Component<ImageProps, ImageState> {
 
 interface ImageProps {
   src: string;
+  srcset?: string;
+  sizes?: string;
   alt?: string;
   className?: string;
   width?: number;
