@@ -26,7 +26,7 @@ const paths = fg.sync(['./dist/**/*.html']);
 
 const sitemap = sm
   .createSitemap({
-    hostname: process.env.SITE_URL,
+    hostname: process.env.URL,
     cacheTime: 600000,
     urls: R.pipe(
       R.map(extractPath),

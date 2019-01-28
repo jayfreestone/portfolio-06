@@ -6,7 +6,7 @@ import MDX from '../components/wrappers/MDX';
 import BaseLayout from '../components/layouts/BaseLayout';
 import { createMarkup } from '../components/Html';
 
-const { publicRuntimeConfig: { SITE_URL, ANALYTICS_UID } } = getConfig();
+const { publicRuntimeConfig: { URL, ANALYTICS_UID } } = getConfig();
 
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -41,7 +41,7 @@ class MyApp extends App {
           />
           <meta
             name="twitter:url"
-            content={`${SITE_URL}${pathname}`}
+            content={`${URL}${pathname}`}
           />
           <meta
             name="twitter:title"
@@ -50,7 +50,7 @@ class MyApp extends App {
           />
           <meta
             name="twitter:image"
-            content={`${SITE_URL}/static/img/jf-social.jpg`}
+            content={`${URL}/static/img/jf-social.jpg`}
           />
           <meta
             name="twitter:card"
@@ -62,7 +62,7 @@ class MyApp extends App {
           />
           <meta
             property="og:url"
-            content={`${SITE_URL}${pathname}`}
+            content={`${URL}${pathname}`}
           />
           <meta
             property="og:title"
@@ -74,7 +74,7 @@ class MyApp extends App {
           />
           <meta
             property="og:image"
-            content={`${SITE_URL}/static/img/jf-social.jpg`}
+            content={`${URL}/static/img/jf-social.jpg`}
           />
           {ANALYTICS_UID && (
             <Fragment>
