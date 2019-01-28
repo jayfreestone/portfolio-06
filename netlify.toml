@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/journal/*"
+  to = "/writing/:splat"
+  status = 301
