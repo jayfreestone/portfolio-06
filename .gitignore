@@ -56,7 +56,8 @@ typings/
 
 # next files
 .cache/
-dist/
+dist/*
+!dist/.gitkeep
 
 # Mac files
 .DS_Store
