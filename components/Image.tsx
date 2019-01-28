@@ -1,6 +1,5 @@
 import React from 'react';
 import Observer from '@researchgate/react-intersection-observer';
-import hasIn from 'ramda/es/hasIn';
 
 class Image extends React.Component<ImageProps, ImageState> {
   static generatePlaceholderSrc(width: number, height: number): string {
