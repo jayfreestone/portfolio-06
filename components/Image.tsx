@@ -1,5 +1,4 @@
 import React from 'react';
-import 'intersection-observer';
 import Observer from '@researchgate/react-intersection-observer';
 
 class Image extends React.Component<ImageProps, ImageState> {

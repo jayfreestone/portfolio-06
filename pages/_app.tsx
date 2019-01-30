@@ -76,6 +76,11 @@ class MyApp extends App {
             property="og:image"
             content={`${URL}/static/img/jf-social.jpg`}
           />
+          <script
+            crossOrigin="anonymous"
+            src="https://polyfill.io/v3/polyfill.min.js"
+          >
+          </script>
           {ANALYTICS_UID && (
             <Fragment>
               <script
