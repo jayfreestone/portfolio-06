@@ -43,7 +43,7 @@
     "build": "next build",
     "build-sitemap": "node sitemap.js",
     "start": "NODE_ENV=production node server.js",
-    "export": "npm run build && next export -o dist && npm run build-sitemap"
+    "export": "npm run build && next export -o dist && npm run build-sitemap && cp dist/404/index.html dist/404.html"
   },
   "repository": {
     "type": "git",
