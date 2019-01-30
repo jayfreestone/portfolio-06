@@ -2,3 +2,13 @@
   from = "/journal/*"
   to = "/writing/:splat"
   status = 301
+
+[[redirects]]
+  from = "/about/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/contact/"
+  to = "/"
+  status = 301
