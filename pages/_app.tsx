@@ -78,7 +78,7 @@ class MyApp extends App {
           />
           <script
             crossOrigin="anonymous"
-            src="https://polyfill.io/v3/polyfill.min.js"
+            src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CIntersectionObserver%2CIntersectionObserverEntry"
           >
           </script>
           {ANALYTICS_UID && (
