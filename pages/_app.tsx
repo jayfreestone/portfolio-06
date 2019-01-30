@@ -76,11 +76,6 @@ class MyApp extends App {
             property="og:image"
             content={`${URL}/static/img/jf-social.jpg`}
           />
-          <script
-            crossOrigin="anonymous"
-            src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CIntersectionObserver%2CIntersectionObserverEntry"
-          >
-          </script>
           {ANALYTICS_UID && (
             <Fragment>
               <script
@@ -98,6 +93,11 @@ class MyApp extends App {
               />
             </Fragment>
           )}
+          <link
+            href="https://polyfill.io"
+            rel="preconnect"
+            crossOrigin
+          />
         </Head>
         <BaseLayout>
           <MDX>

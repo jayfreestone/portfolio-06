@@ -12,6 +12,11 @@ export default class MyDocument extends Document {
         <Head />
         <body>
           <Main />
+          <script
+            crossOrigin="anonymous"
+            src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CIntersectionObserver%2CIntersectionObserverEntry"
+          >
+          </script>
           <NextScript />
         </body>
       </html>
