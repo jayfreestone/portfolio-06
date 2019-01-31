@@ -94,6 +94,14 @@ class MyApp extends App {
             </Fragment>
           )}
           <link
+            rel="webmention"
+            href="https://webmention.io/www.jayfreestone.com/webmention"
+          />
+          <link
+            rel="pingback"
+            href="https://webmention.io/www.jayfreestone.com/xmlrpc"
+          />
+          <link
             href="https://polyfill.io"
             rel="preconnect"
             crossOrigin
