@@ -38,6 +38,7 @@ fieldset {
 }
 
 html {
+  color: var(--color);
   box-sizing: border-box;
 
   @media (min-width: 90em) {
@@ -49,6 +50,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  color: inherit;
 }
 
 body {
@@ -64,7 +66,6 @@ body {
   font-family: var(--primary-font);
   background-color: var(--t-background);
   line-height: var(--line-height);
-  // padding: 0 var(--s-h-pad);
 
   @media (min-width: 40em) {
     --line-height: 1.625;

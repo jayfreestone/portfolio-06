@@ -10,7 +10,7 @@ const Footer = () => (
       <div className="site-footer__inner">
         <Section>
           <div className="site-footer__title">
-            <H>Contact</H>
+            <H className="h1">Contact</H>
           </div>
           <dl className="site-footer__contact">
             {Object.keys(social).map((key) => {
