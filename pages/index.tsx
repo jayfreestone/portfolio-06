@@ -78,7 +78,7 @@ const Index = () => (
       <Section>
         <section id="work" className="bio__section bio__work">
           <div className="work">
-            <H className="bio__work-title">Work</H>
+            <H className="bio__work-title">Recent Work</H>
           </div>
           <ul className="work-list">
             {work.map(({ content, meta: projectMeta }) => (
