@@ -39,6 +39,10 @@ fieldset {
 
 html {
   box-sizing: border-box;
+
+  @media (min-width: 90em) {
+    font-size: calc(1rem + .1vw);
+  }
 }
 
 *,

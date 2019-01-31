@@ -21,7 +21,7 @@ const Index = () => (
             "
             sizes="
               calc(100vw - (2 * var(--s-h-pad))),
-              (min-width: 22em) 35vw
+              (min-width: 30em) 35vw
             "
             src="/static/img/jf-bar-md.jpg"
             alt="Photo of Jay sitting with a drink"
