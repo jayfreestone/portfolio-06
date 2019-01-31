@@ -28,12 +28,12 @@
       margin-right: -10%;
     }
 
-    @media (min-width: 70em) {
-      margin-right: -15%;
-    }
+    // @media (min-width: 70em) {
+    //   margin-right: -15%;
+    // }
 
-    @media (min-width: 90em) {
-      margin-right: -5%;
+    @media (min-width: 100em) {
+      margin-right: -2rem;
     }
   }
 
@@ -52,7 +52,7 @@
   padding-top: var(--s-2);
   font-size: calc( 1.5rem + 17 * (100vw - 320px) / (960 - 320) );
 
-  @media(min-width: 80em) {
+  @media(min-width: 70em) {
     font-size: 3.3rem;
   }
 
