@@ -1,3 +1,6 @@
+[build]
+  functions = "functions/dist"
+
 [[redirects]]
   from = "/journal/*"
   to = "/writing/:splat"
