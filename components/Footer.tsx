@@ -20,6 +20,7 @@ const Footer = () => (
                   <dt>{item.type}</dt>
                   <dd>
                     <a
+                      rel="me"
                       href={item.link}
                       {...(item.link.indexOf('http') > -1 ? {
                         target: '_blank',
