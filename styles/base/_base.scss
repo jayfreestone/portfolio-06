@@ -53,6 +53,11 @@ html {
   color: inherit;
 }
 
+::selection {
+  color: var(--t-background);
+  background-color: var(--t-accent);
+}
+
 body {
   --t-link-color: var(--t-accent);
   --t-background: var(--t-black);
