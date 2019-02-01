@@ -59,6 +59,10 @@ typings/
 dist/*
 !dist/.gitkeep
 
+# built lamada functions
+functions/dist/*
+!functions/dist/.gitkeep
+
 # Mac files
 .DS_Store
 .idea/
