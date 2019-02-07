@@ -1,6 +1,7 @@
 import React from 'react';
 import Html from './Html';
 import Prism from 'prismjs';
+import 'prismjs/components/prism-scss';
 
 class Code extends React.Component<CodeProps> {
   highlight(lang: string, str: string) {
@@ -13,7 +14,7 @@ class Code extends React.Component<CodeProps> {
   }
   render() {
     const { className, children } = this.props;
-    const lang = className.indexOf('language')
+    const lang = className.indexOf('language') > -1
       ? className.split('language-')[1]
       : 'javascript';
     return (
