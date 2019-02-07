@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import getConfig from 'next/config';
 import H from '../H';
 import Section from '../Section';
 import Prose from '../Prose';
 import Image from '../Image';
 import formatWritingDate from './../../utils/formatWritingDate';
+
+const { publicRuntimeConfig: { URL } } = getConfig();
 
 const WritingSingle: React.FunctionComponent<WritingSingleProps> = ({
   children,
@@ -21,13 +24,29 @@ const WritingSingle: React.FunctionComponent<WritingSingleProps> = ({
         />
         <meta
           name="twitter:title"
+          key="twitter:title"
           property="og:title"
           content={`${meta.title} | Jay Freestone`}
         />
         <meta
           property="og:title"
+          key="og:title"
           content={`${meta.title} | Jay Freestone`}
         />
+        {meta.previewImage && (
+          <Fragment>
+            <meta
+              name="twitter:image"
+              key="twitter:image"
+              content={`${URL}${meta.previewImage}`}
+            />
+            <meta
+              property="og:image"
+              key="og:image"
+              content={`${URL}${meta.previewImage}`}
+            />
+          </Fragment>
+        )}
       </Head>
       <article>
         <header className="writing-single__header">
@@ -72,6 +91,7 @@ interface WritingSingleProps {
     title: string;
     date: string;
     excerpt: string;
+    previewImage: string;
   };
 }
 

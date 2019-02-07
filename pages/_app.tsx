@@ -37,43 +37,53 @@ class MyApp extends App {
           <title>Jay Freestone | Front End Developer</title>
           <meta
             name="description"
+            key="description"
             content="I’m a front-end developer living and working in East London.I currently lead the front-end team at Browser London where I help build enterprise web-apps."
           />
           <meta
             name="twitter:url"
+            key="twitter:url"
             content={`${URL}${pathname}`}
           />
           <meta
             name="twitter:title"
+            key="twitter:title"
             property="og:title"
             content="Jay Freestone | Front End Developer"
           />
           <meta
             name="twitter:image"
+            key="twitter:image"
             content={`${URL}/static/img/jf-social.jpg`}
           />
           <meta
             name="twitter:card"
+            key="twitter:card"
             content="summary"
           />
           <meta
             name="twitter:site"
+            key="twitter:site"
             content="@jayfreestone"
           />
           <meta
             property="og:url"
+            key="og:url"
             content={`${URL}${pathname}`}
           />
           <meta
             property="og:title"
+            key="og:title"
             content="Jay Freestone | Front End Developer"
           />
           <meta
             property="og:type"
+            key="og:type"
             content="website"
           />
           <meta
             property="og:image"
+            key="og:image"
             content={`${URL}/static/img/jf-social.jpg`}
           />
           {ANALYTICS_UID && (
