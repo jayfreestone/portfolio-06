@@ -1,14 +1,8 @@
 import React from 'react';
 import Observer from '@researchgate/react-intersection-observer';
+import Placeholder from './Placeholder';
 
 class Image extends React.Component<ImageProps, ImageState> {
-  static generatePlaceholderSrc(width: number, height: number): string {
-    return `data:image/svg+xml,%3Csvg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 ${width} ${height}"%3E%3C/svg%3E
-  `;
-  }
-
   state = {
     hasIntersected: false,
   };
@@ -31,23 +25,30 @@ class Image extends React.Component<ImageProps, ImageState> {
 
     if (hasIntersected) {
       return (
-        <img
-          alt={alt}
-          src={src}
-          sizes={sizes}
-          srcSet={srcset}
-          className={className}
-        />
+        <div className={className}>
+          <Placeholder width={width} height={height}>
+            <img
+              alt={alt}
+              src={src}
+              sizes={sizes}
+              srcSet={srcset}
+              className={className}
+            />
+          </Placeholder>
+        </div>
       );
     }
 
     return (
       <Observer {...this.options}>
-        <img
-          alt={alt}
-          src={Image.generatePlaceholderSrc(width, height)}
-          className={className}
-        />
+        <div className={className}>
+          <Placeholder width={width} height={height}>
+            <img
+              alt={alt}
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            />
+          </Placeholder>
+        </div>
       </Observer>
     );
   }
