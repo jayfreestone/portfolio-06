@@ -20,6 +20,7 @@ A really common pattern on the web is adding an icon or indicator using a pseudo
   width={1280}
   height={640}
   src={headerImage}
+  alt="Screenshot of text containing a link, followed by an icon that indicates it's external."
 />
 
 While you could accomplish this by adding an inline SVG, in this instance it's far cleaner to just use a pseudo element and keep it within the domain of the stylesheet since:
@@ -53,6 +54,7 @@ However this doesn't guarantee the icon will appear on the same line as the rest
   src={exampleImageMd}
   srcset={`${exampleImageMd} 640w, ${exampleImageLg} 1280w`}
   sizes="calc(100vw - (2 * var(--s-h-pad))), (min-width: 40em) 40em"
+  alt="A screenshot showing how the icon falls to the next line by itself."
 />
 
 Adding `white-space: nowrap;` to the link works, but results in the *entire* link not wrapping, creating its own set of awkward breaks and greatly increasing the chance of overflow.
@@ -117,6 +119,7 @@ At first glance this works great, but it falls victim to the same issue as the `
   src={awkwardWrappingImageMd}
   srcset={`${awkwardWrappingImageMd} 640w, ${awkwardWrappingImageLg} 1280w`}
   sizes="calc(100vw - (2 * var(--s-h-pad))), (min-width: 40em) 40em"
+  alt="A screenshot showing how the link now doesn't break cleanly, instead falling to a new line."
 />
 
 ## Keeping it inline 
