@@ -24,6 +24,9 @@ module.exports = (phase, { defaultConfig }) => {
   return R.pipe(
     withSass,
     withTypescript,
+    // Prevents inlining of images. Can't be 0.
+    // https://github.com/twopluszero/next-images/pull/9
+    R.set(R.lensProp('inlineImageLimit'), 1),
     withImages,
     withEnv,
     withMDX,
