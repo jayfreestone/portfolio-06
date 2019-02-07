@@ -29,15 +29,23 @@ class Image extends React.Component<ImageProps, ImageState> {
     const { src, srcset, sizes, className, alt, width, height } = this.props;
     const { hasIntersected } = this.state;
 
+    if (hasIntersected) {
+      return (
+        <img
+          alt={alt}
+          src={src}
+          sizes={sizes}
+          srcSet={srcset}
+          className={className}
+        />
+      );
+    }
+
     return (
       <Observer {...this.options}>
         <img
           alt={alt}
-          src={hasIntersected ? src : Image.generatePlaceholderSrc(width, height)}
-          {...(hasIntersected ? {
-            sizes,
-            srcSet: srcset,
-          } : {})}
+          src={Image.generatePlaceholderSrc(width, height)}
           className={className}
         />
       </Observer>
