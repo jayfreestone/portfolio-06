@@ -57,7 +57,7 @@ const WritingSingle: React.FunctionComponent<WritingSingleProps> = ({
           />
           <div className="authorship__copy">
             <p>
-              I'm a front end developer living and working in East London. Currently building enterprise web-apps at Browser London. <Link href={{ pathname: '/' }}>Read full bio.</Link>
+              I'm a front end developer living and working in East London. Currently building enterprise web-apps at Browser London. <Link href={{ pathname: '/' }}><a>Read full bio.</a></Link>
             </p>
           </div>
         </Prose>
