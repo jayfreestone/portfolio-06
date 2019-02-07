@@ -1,0 +1,104 @@
+import WritingSingle from '../../../components/templates/writing-single';
+import Quote from '../../../components/Quote';
+import Image from '../../../components/Image';
+import netlifyImage from './netlify-marketing-site.png';
+import acfImage from './acf-content-builder.png';
+import smashingImage from './smashing-mag-jam.png';
+import allPowerfulImage from './all-powerful-front-end-developer.jpg';
+
+export const meta = {
+  title: 'The JAMstack Craze',
+  date: '2019-02-02',
+  excerpt: '',
+};
+
+I'm always on the lookout for new developments and trends in content management systems (CMSs). While traditionally  a space occupied by open-source giants such as WordPress and Drupal, ever since the [Smashing Magazine relaunch](https://www.smashingmagazine.com/2017/03/a-little-surprise-is-waiting-for-you-here/) there has been a resurgence of interest in static-sites.
+
+Given the complexity of modern front-end development, the desire to return to the simplicity of plain HTML is perhaps unsurprising — after all, many of today's problems (performance, async data, caching etc) are either irrelevant or come as standard with the removal of a dynamic server-side language.
+
+<Image 
+  width={2536}
+  height={1295}
+  src={netlifyImage}
+/>
+
+While there are many vocal proponents of modern static sites, the biggest champion is Mathias Biillman of [Netlify](https://www.netlify.com/), who is responsible for the playfully sounding '[JAMStack](https://jamstack.org/)' and has helped popularise static-based workflows with tools such as a [static CMS](https://www.netlifycms.org/) and [e-commerce API](https://github.com/netlify/gocommerce). The JAMStack boils down to:
+
+- JavaScript to handle async data requests/interactivity.
+- APIs to handle dynamic data retrieval/requests.
+- Markup compiled into static HTML files.
+
+Despite the original acronym, these principles could easily apply to [Jekyll](https://jekyllrb.com/) blogs of yesteryear. The difference is instead characterised by the advanced tooling, workflows and ecosystem that has since sprung up to accommodate the renewed interest. By combining the modern tooling of [Gatsby](https://www.gatsbyjs.org/) with services such as [Formspree](https://formspree.io/) and a 'static' CMS (such as Netlify's own), the JAMStack suggests that static-sites need not be relegated to esoteric developer blogs or hobbyist sites, but are serious contenders for client projects.
+
+The highlights include performance gains, improved security and an escape from the bloated content-management systems we have become accustomed to:
+
+<Quote
+  attribution={{
+    author: 'Official JAMstack site',
+    link: 'https://jamstack.org/',
+  }}
+>
+
+It’s a new way of building websites and apps that delivers better performance, higher security, lower cost of scaling, and a better developer experience.
+
+</Quote>
+
+Unfortunately, nearly all of the advantages of a static site are simply due to enforced minimalism. For instance, TTFB performance will be the best it possibly can be (all else being equal), since there is no overhead to serving pages that come with dynamically generated content. The site will be considerably more secure only by virtue of there being no server-side language or database to provide a vector for intrusion. Hosting will be more economical and scaling will be infinity easier because there are no dynamic features that require a server-side language or database. 
+
+To say a static site is faster, more secure and more scalable is undeniably true, but it's akin to removing the engine from a car and heralding it as the more economical option. If the features were expendable in the first place, then the real question is why they were included at all.
+
+## Immature tooling
+
+While tooling has come a long way, most static-site builders don't provide anywhere near the flexibility of more traditional CMSs or server-side frameworks. Basic features such as named/aliased routes are rarely present, and the [Netlify CMS](https://www.netlifycms.org/) (while interesting) will struggle to rival the editing experience of Craft's Matrix blocks or ACF's Flexible Content Field. 
+
+<Image 
+  width={2228}
+  height={1241}
+  src={acfImage}
+/>
+
+Ironically it's the content-editing experience itself which suffers the most, since despite the developer obsession with plain text, it's surprisingly painful to create complex editorial content *without* the aid of a configurable CMS. If you imagine a content-builder with variable content types and conditional fields, this becomes extremely problematic to represent in Markdown, unwieldy in front-matter and counterintuitive in JSON once you try with longform.
+
+Moreover, if you decide to avoid the CMS and just enter these as front-matter yourself (which admittedly works), you'll be entirely responsible for remembering the fields and their types yourself. Forget the type-checking, field constrains (such as related entity/foreign key constraints) and conditionals afforded by conventional CMSs.
+
+As a result it's hard to provide anywhere near as robust an editing system as any CMS on the market. This isn't just an issue for 'less-techy' editors, but a serious inconvenience.
+
+## Fighting the system
+
+The most perplexing JAMStack case-studies are not those which are static marketing sites, but those with a *genuine need for dynamic features*. 
+
+<Image 
+  width={2874}
+  height={1624}
+  src={smashingImage}
+/>
+
+Smashing Magazine itself requires advanced search capabilities, basic e-commerce features, a multi-user CMS and an integrated comments system. These are *integral* features to the success and functionality of their business, and have already been excluded by their choice of stack. Instead of these being *your* problems, and choosing if/when to farm them out to third party services, the JAMStack leaves you with little choice other than to distribute responsibility to a variety of (often unproven) 3rd parties.
+
+Reading the dependency list for [Smashing Magazine](https://www.netlify.com/blog/2017/03/16/smashing-magazine-just-got-10x-faster/) reads like the service equivalent of `node_modules`, including Algolia, GoCommerce, GoTrue, GoTell and a variety of Netlify services to name a few. There is a huge amount of value in knowing what to outsource (and when), but it is amusing to note the complexity that has been introduced in an apparent attempt to 'get back to basics'. This is to say nothing of the potential fragility in relying on so many disparate third-party services.
+
+The second you need a dynamic feature (such as a form or comments) you either have to rely on a 3rd party, or build a separate API yourself (essentially creating a backend). This solves nothing, but instead just awkwardly spreads the responsibility.
+
+<!-- There are several points in Chris Coyer's [recent talk](https://noti.st/chriscoyier/bUUDQd#s6UcxWj) covering 'serverless' and the JAMstack where essentially architects a backend: -->
+
+<Image 
+  width={1600}
+  height={900}
+  src={allPowerfulImage}
+/>
+
+## Enhanced
+
+This is even a minor blow for progressive enhancement, since features traditionally provided for 'free' (such as form validation messages) and e-commerce options will *require* JavaScript where before they did not. Anything dynamic must be client-side, so the more holes that need to be plugged the worse things become, not to mention the potential performance issues created by moving an abundance of logic (possibly unnecessarily) client-side where it can't be built and cached on-server. 
+
+## Conclusion
+
+There's still a place for static sites on the web, but it's shrinking, not growing, and likely still the domain of developer portfolios and side-projects. Sure, it's possible to engineer a workflow in 2018 that manages to smoosh together a set of disparate 3rd parties, a VCS-backed CMS and a bunch of template files into a working (and fast!) site, but the value is questionable. Instead of reducing complexity, the JAMStack just shifts it around into more precarious places.
+
+Security and performance are real concerns and will undoubtably continue to plague developers, library authors and product owners as long as software development is alive, however the solution won't be found in a reduction of responsibility.
+
+It's fitting that we have taken the simplest form of a website — static HTML — and transformed it into a complex landscape of build processes, tooling and services that more than rivals the complexity it set out to supplant.
+
+export default ({ children }) => (
+  <WritingSingle meta={meta}>{children}</WritingSingle>
+);
