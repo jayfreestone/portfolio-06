@@ -57,6 +57,11 @@ class MyApp extends App {
             content={`${URL}/static/img/jf-social.jpg`}
           />
           <meta
+            name="twitter:description"
+            key="twitter:description"
+            content="I’m a front-end developer living and working in East London.I currently lead the front-end team at Browser London where I help build enterprise web-apps."
+          />
+          <meta
             name="twitter:card"
             key="twitter:card"
             content="summary"

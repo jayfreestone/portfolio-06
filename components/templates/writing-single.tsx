@@ -29,6 +29,11 @@ const WritingSingle: React.FunctionComponent<WritingSingleProps> = ({
           content={`${meta.title} | Jay Freestone`}
         />
         <meta
+          name="twitter:description"
+          key="twitter:description"
+          content={meta.excerpt}
+        />
+        <meta
           property="og:title"
           key="og:title"
           content={`${meta.title} | Jay Freestone`}
