@@ -14,6 +14,7 @@ const withImages = require('next-images')
 const withPathMap = require('./utils/next/withPathMap');
 const withMDX = require('./utils/next/withMDX');
 const withEnv = require('./utils/next/withEnv');
+const withWorkbox = require('./utils/next/withWorkbox');
 
 module.exports = (phase, { defaultConfig }) => {
   // if (phase === PHASE_PRODUCTION_SERVER) {
@@ -27,5 +28,6 @@ module.exports = (phase, { defaultConfig }) => {
     withImages,
     withEnv,
     withMDX,
+    withWorkbox,
   )(defaultConfig);
 }

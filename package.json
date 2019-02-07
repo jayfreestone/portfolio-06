@@ -32,7 +32,8 @@
     "react-dom": "^16.7.0",
     "send-webmention": "^2.0.0",
     "sitemap": "^2.1.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "workbox-webpack-plugin": "^3.6.3"
   },
   "devDependencies": {
     "@types/ramda": "^0.25.45",
