@@ -2,6 +2,7 @@ import React from 'react';
 import Html from './Html';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-scss';
+import 'prismjs/components/prism-jsx';
 
 class Code extends React.Component<CodeProps> {
   highlight(lang: string, str: string) {
