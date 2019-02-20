@@ -3,12 +3,12 @@ import Quote from '../../components/Quote';
 
 export const meta = {
   title: 'React Portals with Hooks',
-  date: '2019-02-12',
-  excerpt: '',
+  date: '2019-02-20',
+  excerpt: 'A quick look at implementing a helper for creating Portals using React Hooks.',
 };
 
 Since [Hooks](https://reactjs.org/docs/hooks-intro.html) have just been
-introducted into the latest stable build of React, it's a great time to play
+introduced into the latest stable build of React, it's a great time to play
 around with them and think about how previous component structures and paradigms
 (including classes and HOC's) can fit within them.
 
@@ -78,6 +78,13 @@ function usePortal(id) {
 }
 ```
 
+Interesting, it turns out `useRef` is now designed for any instance-based data as
+opposed to just DOM node references:
+
+<Quote attribution={{ author: 'React Docs', link: 'https://reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables' }}>
+  The useRef() Hook isn’t just for DOM refs. The “ref” object is a generic container whose current property is mutable and can hold any value, similar to an instance property on a class.
+</Quote>
+
 Our hook takes an `id`, which references which parent container it should append
 itself to (such as 'modal-root' in the original example).
 
@@ -104,12 +111,7 @@ function usePortal(id) {
 ```
 
 We've effectively replaced `componentDidMount` and `componentWillUnmount` with
-`useEffect`, and since `useRef` is now desined for any instance-based data as
-opposed to just DOM node references:
-
-<Quote attribution={{ author: 'React Docs', link: 'https://reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables' }}>
-  The useRef() Hook isn’t just for DOM refs. The “ref” object is a generic container whose current property is mutable and can hold any value, similar to an instance property on a class.
-</Quote>
+`useEffect`.
 
 At the end we return the node, ready to use within our revised `Modal` component:
 
@@ -121,7 +123,7 @@ const Modal = ({ children }) => {
 ```
 
 This works great, but instead of our `rootElemRef` being instantiated once when
-mounted, we're unforutnately recreating it every render by placing it within the
+mounted, we're unfortunately recreating it every render by placing it within the
 function body:
 
 ```jsx
@@ -314,12 +316,12 @@ import usePortal from './usePortal';
  * </Portal>
  */
 const Portal = ({ id, children }) => {
-  const target = usePortal(id, [id]);
+  const target = usePortal(id);
   return createPortal(
     children,
     target,
   );
-}
+};
 
 export default Portal;
 ```
