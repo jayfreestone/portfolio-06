@@ -189,6 +189,12 @@ a[href*="//"]:not([href*="jayfreestone.com"]) {
 }
 ```
 
+### Update (04/08/2019)
+
+Tim Baumgarten has pointed out that the above mask technique can be [buggy in Safari](https://jsfiddle.net/34rmz5k7/2/), resulting in a background 'bleed' from the top/bottom due to line-height. 
+
+The best fix is to composite two masks together ⁠— one to hide the background color in its entirety (using a fully black gradient), and one to 'cut' a hole in the first (using SVG). It's an easy and super elegant solution that seems to work well in all the mask-supporting browsers I've tested.
+
 ## The Takeaways 🍕
 
 - Don't use `inline-block` in long-form, since it won't wrap elegantly.
