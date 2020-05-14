@@ -6,7 +6,6 @@ A generic `workflow.yaml` for use with Github Actions. Designed to be used as su
 
 The workflow requires the following secrets be set up for the repository:
 
-- `APPLICATION`: The application 'name' used for both the folder in the platform's `applications` directory, as well as the container repository. Example: `damascus-road`.
 - `PAT_GITHUB`: A Github [personal access token](https://github.com/settings/tokens) with the ability to write to the [platform repository](https://github.com/jayfreestone/platform).
 - `DIGITALOCEAN_ACCESS_TOKEN`: A Digital Ocean access token used to push to the container repository.
 
@@ -14,7 +13,13 @@ The workflow requires the following secrets be set up for the repository:
 
 The final `workflow.yaml` file can be built with the default `make` command.
 
-It is possible to inject an optional 'prebuild' set of steps that are run just before the docker image is built.
+The only requirement when building the workflow is to pass the application name (used for both the folder in the platform's `applications` directory, as well as the container repository), like so:
+
+```
+make application=damascus-road
+```
+
+It is also possible to inject an optional 'prebuild' set of steps that are run just before the docker image is built.
 
 You can do this by passing an `m4` template to the make command's `prebuild` variable, like so:
 
@@ -42,6 +47,13 @@ Example:
 app := portfolio-06
 image := registry.digitalocean.com/platform/$(app)
 tag := latest
+
+.PHONY: build-workflow
+build-workflow: .github/workflows/workflow.yaml
+
+.github/workflows/workflow.yaml: .platform-workflow/workflow.m4
+	@cd .platform-workflow && \
+	  $(MAKE) application=${app} output=../.github/workflows/workflow.yaml
 
 .PHONY: build
 build: Dockerfile
