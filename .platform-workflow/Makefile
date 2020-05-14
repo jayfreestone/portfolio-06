@@ -1,4 +1,14 @@
+output := workflow.yaml
+
 default: workflow.yaml
 
 workflow.yaml: *.m4
-	@m4 -D xPrebuild=${prebuild} workflow.m4 > workflow.yaml
+ifndef application
+	@echo "💣 Please specify application."
+	exit 1;
+endif
+ifndef output
+	@echo "Output not specified, creating in root."
+endif
+	@m4 -D xPrebuild=${prebuild} -D xApplication=${application} workflow.m4 > ${output} 
+	@echo ✅ Created ${output}

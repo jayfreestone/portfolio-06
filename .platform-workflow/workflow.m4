@@ -54,11 +54,11 @@ patsubst(sinclude(xPrebuild), `^', `      ')
           kustomize: 3.4.0
           command: |
             cd applications
-            make tag application="${{ secrets.APPLICATION }}" tag=${{ env.IMAGE_TAG }}
+            make tag application="xApplication" tag=${{ env.IMAGE_TAG }}
       - name: Commit to platform
         uses: stefanzweifel/git-auto-commit-action@v4.1.6
         with:
-          commit_message: Update ${{ secrets.APPLICATION }} tag to ${{ env.IMAGE_TAG }}
+          commit_message: Update xApplication tag to ${{ env.IMAGE_TAG }}
           commit_user_name: Github
           commit_user_email: mail@jayfreestone.com
           commit_author: Jay <mail@jayfreestone.com>
