@@ -7,7 +7,8 @@ A generic `workflow.yaml` for use with Github Actions. Designed to be used as su
 The workflow requires the following secrets be set up for the repository:
 
 - `PAT_GITHUB`: A Github [personal access token](https://github.com/settings/tokens) with the ability to write to the [platform repository](https://github.com/jayfreestone/platform).
-- `DIGITALOCEAN_ACCESS_TOKEN`: A Digital Ocean access token used to push to the container repository.
+- `GCP_PROJECT_ID`: ID of the Google Cloud project.
+- `GCP_SA_KEY`: The service account key which will be used for authentication. This key should be created, encoded as a Base64 string (eg. cat my-key.json | base64 on macOS), and stored as a secret.
 
 ## Building
 
@@ -45,7 +46,7 @@ Example:
 
 ```makefile
 app := portfolio-06
-image := registry.digitalocean.com/platform/$(app)
+image := eu.gcr.io/platform-jfree/$(app)
 tag := latest
 
 .PHONY: build-workflow
