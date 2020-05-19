@@ -1,5 +1,5 @@
 app := portfolio-06
-image := registry.digitalocean.com/platform/$(app)
+image := eu.gcr.io/platform-jfree/$(app)
 tag := latest
 
 .PHONY: build-workflow
