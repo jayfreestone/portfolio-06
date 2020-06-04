@@ -1,5 +1,5 @@
 app := portfolio-06
-image := eu.gcr.io/platform-jfree/$(app)
+image := jayfreestone/$(app)
 tag := latest
 
 .PHONY: build-workflow
